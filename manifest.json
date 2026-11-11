@@ -3,10 +3,12 @@
   "apiVersion": 4,
   "id": "dev.cupertino.yaqmc",
   "name": "Cupertino",
-  "description": "An Apple-inspired redesign: macOS on desktop, iOS on phones, iPadOS on tablets.",
+  "description": "An Apple-inspired redesign: macOS on desktop, iOS on phones, iPadOS on tablets, in Classic or Liquid Glass style.",
   "version": "1.0.0",
   "license": "MIT",
-  "engines": { "yaqmc": ">=0.1.1" },
+  "engines": {
+    "yaqmc": ">=0.1.1"
+  },
   "entrypoints": {
     "styles": [
       "styles/00-tokens.css",
@@ -16,9 +18,12 @@
       "styles/40-layout-pc.css",
       "styles/41-layout-phone.css",
       "styles/42-layout-pad.css",
-      "styles/50-platform-ios.css"
+      "styles/50-platform-ios.css",
+      "styles/60-liquid-glass.css"
     ],
-    "scenes": ["scenes/cupertino.scene.json"],
+    "scenes": [
+      "scenes/cupertino.scene.json"
+    ],
     "script": "main.js"
   },
   "permissions": [
@@ -35,11 +40,26 @@
   "settingsSchema": {
     "fields": [
       {
+        "id": "style",
+        "type": "select",
+        "label": "Style",
+        "description": "Classic keeps solid, quiet chrome. Liquid Glass turns bars, sidebar, menus and controls into refractive glass.",
+        "options": [
+          "Classic",
+          "Liquid Glass"
+        ],
+        "default": "Classic"
+      },
+      {
         "id": "homeArrangement",
         "type": "select",
         "label": "Home arrangement",
         "description": "Order of the Home sections. Applies immediately.",
-        "options": ["Default", "Stations first", "Essentials only"],
+        "options": [
+          "Default",
+          "Stations first",
+          "Essentials only"
+        ],
         "default": "Default"
       }
     ]

@@ -2,13 +2,27 @@
 
 An Apple-inspired redesign of [YAQMC](https://github.com/YAQMC/YAQMC), shipped as one plugin with three
 deliberately different layout systems: **macOS** on desktop, **iOS** on phones, **iPadOS** on tablets.
+Each comes in two styles you switch in Settings: **Classic** (solid, quiet chrome) and **Liquid Glass**.
 
 | Desktop — macOS | Tablet — iPadOS | Phone — iOS |
 | --- | --- | --- |
 | ![Desktop home](docs/screenshots/pc-home.jpg) | ![Tablet three-pane](docs/screenshots/pad-three-pane.jpg) | <img src="docs/screenshots/phone-home.jpg" width="220" alt="Phone home"> |
 
+**Liquid Glass**
+
+| Desktop | Tablet | Phone |
+| --- | --- | --- |
+| ![Desktop, Liquid Glass](docs/screenshots/glass-pc-album.jpg) | ![Tablet, Liquid Glass](docs/screenshots/glass-pad-three-pane.jpg) | <img src="docs/screenshots/glass-phone-home.jpg" width="220" alt="Phone, Liquid Glass"> |
+
 <details>
 <summary>More screenshots</summary>
+
+**Liquid Glass** — dark desktop, dark Settings, tablet Now Playing, phone playlist
+
+![Dark desktop](docs/screenshots/glass-pc-dark.jpg)
+![Dark settings](docs/screenshots/glass-pc-settings-dark.jpg)
+![Tablet Now Playing](docs/screenshots/glass-pad-now-playing.jpg)
+<img src="docs/screenshots/glass-phone-playlist.jpg" width="220" alt="Phone playlist, Liquid Glass">
 
 **Desktop** — album with Up Next docked, Settings, Now Playing, dark Explore
 
@@ -41,6 +55,8 @@ fallback; on Apple devices the host's font stack resolves to San Francisco).
 
 Optional, all in YAQMC's own settings:
 
+- **Plugins → Cupertino → Style**: **Classic** or **Liquid Glass**. Switches live, no restart.
+
 - **Lyrics presets → Cupertino** selects the bundled Now Playing scene (artwork rests smaller while paused).
 - **Appearance → Window material → Translucent** turns bars and menus into real glass on macOS.
 - **Appearance → Color palette**: the host's default palette becomes the Music red; any other palette you
@@ -63,6 +79,20 @@ and Android. Checked against 0.1.1 (rendered) and 0.1.3-beta.3 (every targeted c
 | `ui.layout` | Applying the Home arrangement setting |
 
 No network, storage or account access.
+
+## Styles
+
+| | Classic | Liquid Glass |
+| --- | --- | --- |
+| Canvas | Plain system background | Soft accent / blue / purple wash for the glass to refract |
+| Sidebar | Full-height source list | Inset floating glass pane with rounded corners |
+| Bars, sheets, menus | Dense tint (real blur only on macOS with the translucent material) | Real backdrop blur on every platform, specular top rim, capsule shapes |
+| Controls | Filled tints, rounded rectangles | Pills; primary buttons lit from above; segmented controls and selects as glass tracks |
+| Content cards | Flat fills | Tinted panes with a light rim, deliberately unblurred |
+
+Liquid Glass falls back to solid chrome when the system asks for reduced transparency. It re-enables
+live blur that the host turns off on Windows, Linux and Android for repaint cost, but only on the small
+floating surfaces; if playback feels heavy on a slow GPU, use Classic.
 
 ## The three layout systems
 
@@ -114,8 +144,11 @@ What the plugin API allows shaped this design. The constraints that matter:
    animate a property the plugin also declares, and the user's accent can only be respected by leaving
    it alone, which is why the Music red applies to the default palette only.
 4. **No setting reaches CSS.** Plugin settings are readable from the script worker only, and the worker
-   has no DOM. Density, blur or accent toggles are impossible; the plugin relies on the host's own
-   Appearance settings instead.
+   has no DOM. The Style switch works around this: the script re-registers its sidebar entry with an
+   invisible U+200B appended to the label in Liquid Glass mode, the host renders it into the entry's
+   `aria-label`, and `styles/60-liquid-glass.css` keys off it with `:root:has(...)`. It depends on that
+   host markup, so it is limited to one flag; other toggles (density, accent) still use the host's own
+   Appearance settings.
 5. **Live blur is switched off by the host on Windows, Linux and Android** for rendering performance.
    Bars and menus use dense tints there; real glass is limited to macOS with the translucent material.
 6. **Plugin pages are block documents** (heading, text, stats, list, actions, notice, divider; 40 blocks,
@@ -143,6 +176,7 @@ styles/40-layout-pc.css    layout system 1: macOS
 styles/41-layout-phone.css layout system 2: iOS on Android
 styles/42-layout-pad.css   layout system 3: iPadOS
 styles/50-platform-ios.css entry point for a future iOS host
+styles/60-liquid-glass.css Liquid Glass style, scoped under the style flag
 scenes/cupertino.*       lyrics scene (schema + scoped CSS)
 main.js                  Now Playing page and Home arrangement (plain JS, no bundler)
 tools/build.mjs          promotes declarations to !important, writes build/ and dist/*.yaqmc-plugin

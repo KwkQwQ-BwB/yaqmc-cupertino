@@ -57,7 +57,7 @@ test('script registers the page, renders within block limits and seeks from the 
       previous: record('previous'),
     },
     lyrics: { get: async () => ({ lines: [], timedLines, currentLine: 61 }) },
-    settings: { get: async () => ({ homeArrangement: 'Stations first' }) },
+    settings: { get: async () => ({ homeArrangement: 'Stations first', style: 'Liquid Glass' }) },
     layout: { set: record('layout.set'), clear: record('layout.clear') },
     navigation: { register: record('navigation.register') },
     pages: {
@@ -89,8 +89,15 @@ test('script registers the page, renders within block limits and seeks from the 
   handlers['ui.action']({ slot: 'page', pageId: 'other', id: 'next' });
   assert.equal(JSON.stringify(calls.filter(([name]) => name === 'seek' || name === 'next')), '[["seek",70000]]');
 
-  await handlers['settings.changed']({ homeArrangement: 'Default' });
+  // Style flag: the label the glass stylesheet matches, and back to plain on Classic.
+  const labels = () => calls.filter(([name]) => name === 'navigation.register').map(([, entry]) => entry.label);
+  assert.equal(labels().at(-1), 'Now Playing\u200B');
+  const css = await readFile(new URL('../styles/60-liquid-glass.css', import.meta.url), 'utf8');
+  assert.ok(css.includes(`aria-label^='Now Playing\\200B'`));
+
+  await handlers['settings.changed']({ homeArrangement: 'Default', style: 'Classic' });
   assert.ok(calls.some(([name, target]) => name === 'layout.clear' && target === 'home'));
+  assert.equal(labels().at(-1), 'Now Playing');
   stop();
   assert.equal(calls.filter(([name]) => name === 'warn').length, 0);
 });
