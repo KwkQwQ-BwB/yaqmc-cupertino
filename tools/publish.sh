@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Publishes this plugin: GitHub repo (topic yaqmc-plugin), push, and Release v1.0.0 with the package.
+# Publishes the plugins: GitHub repo (topic yaqmc-plugin), push, and Release v<version> with both packages.
 # Needs an authenticated GitHub CLI (`gh auth status`) and Node.js >= 22.2. Safe to re-run.
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -32,15 +32,17 @@ git push -u origin main
 gh repo edit "$OWNER/$REPO_NAME" --add-topic yaqmc-plugin --add-topic yaqmc --homepage "$URL"
 
 PKG="dist/dev.cupertino.yaqmc-$VERSION.yaqmc-plugin"
+COMPANION="dist/dev.cupertino.yaqmc.now-playing-$VERSION.yaqmc-plugin"
 SHA="$(sha256sum "$PKG" | cut -d' ' -f1)"
+COMPANION_SHA="$(sha256sum "$COMPANION" | cut -d' ' -f1)"
 NOTES="$(mktemp)"
-sed -e "s/{{OWNER}}/$OWNER/g" -e "s/{{REPO}}/$REPO_NAME/g" -e "s/{{SHA}}/$SHA/g" -e "s/{{VERSION}}/$VERSION/g" \
-  docs/release-notes.md > "$NOTES"
+sed -e "s/{{OWNER}}/$OWNER/g" -e "s/{{REPO}}/$REPO_NAME/g" -e "s/{{SHA}}/$SHA/g" \
+  -e "s/{{COMPANION_SHA}}/$COMPANION_SHA/g" -e "s/{{VERSION}}/$VERSION/g" docs/release-notes.md > "$NOTES"
 if gh release view "$TAG" >/dev/null 2>&1; then
-  gh release upload "$TAG" "$PKG" --clobber
+  gh release upload "$TAG" "$PKG" "$COMPANION" --clobber
   gh release edit "$TAG" --notes-file "$NOTES"
 else
-  gh release create "$TAG" "$PKG" --title "Cupertino $VERSION" --notes-file "$NOTES" --target main
+  gh release create "$TAG" "$PKG" "$COMPANION" --title "Cupertino $VERSION" --notes-file "$NOTES" --target main
 fi
 echo "Repository: $URL"
 echo "Release:    $URL/releases/tag/$TAG"

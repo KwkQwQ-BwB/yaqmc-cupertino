@@ -18,23 +18,39 @@ test('importantize promotes declarations but never keyframes', () => {
   assert.throws(() => importantize('.a { color: red'));
 });
 
-test('package holds every entrypoint and stays inside host rules', async () => {
-  const { files } = await build();
-  const names = files.map((file) => file.name);
-  const manifest = JSON.parse(files[0].bytes.toString());
-  const { styles, scenes, script } = manifest.entrypoints;
-  for (const entry of [...styles, ...scenes, script, 'LICENSE']) assert.ok(names.includes(entry), entry);
-  assert.match(manifest.id, /^[a-z0-9]+(?:[.-][a-z0-9]+)+$/);
-  assert.equal(manifest.apiVersion, 4);
-  assert.equal(new Set(names).size, names.length);
-  for (const name of names) assert.ok(!/(^|\/)\.|\.\.|^\/|:/.test(name) && name.split('/').length <= 8, name);
-  for (const file of files.filter((item) => item.name.endsWith('.css'))) {
-    const css = file.bytes.toString();
-    assert.ok(!/@import|url\(/.test(css), `${file.name}: no external resources`);
+test('each package holds its entrypoints and stays inside host rules', async () => {
+  const packages = await build();
+  assert.deepEqual(packages.map((item) => item.manifest.id), ['dev.cupertino.yaqmc', 'dev.cupertino.yaqmc.now-playing']);
+  for (const { manifest, files } of packages) {
+    const names = files.map((file) => file.name);
+    const { styles = [], scenes = [], script } = manifest.entrypoints;
+    for (const entry of [...styles, ...scenes, ...(script ? [script] : []), 'LICENSE']) assert.ok(names.includes(entry), entry);
+    assert.match(manifest.id, /^[a-z0-9]+(?:[.-][a-z0-9]+)+$/);
+    assert.equal(manifest.apiVersion, 4);
+    assert.equal(new Set(names).size, names.length);
+    for (const name of names) assert.ok(!/(^|\/)\.|\.\.|^\/|:/.test(name) && name.split('/').length <= 8, name);
+    for (const file of files.filter((item) => item.name.endsWith('.css'))) {
+      assert.ok(!/@import|url\(/.test(file.bytes.toString()), `${file.name}: no external resources`);
+    }
+    if (script) {
+      assert.ok(!/fetch\(|eval\(|invoke\(|location\.|import\(|new Function|XMLHttpRequest/.test(
+        files.find((file) => file.name === script).bytes.toString(),
+      ));
+    }
   }
-  assert.ok(!/fetch\(|eval\(|invoke\(|location\.|import\(|new Function|XMLHttpRequest/.test(
-    files.find((file) => file.name === script).bytes.toString(),
-  ));
+});
+
+// Regression: YAQMC 0.1.1 deletes a plugin's style nodes when it starts that plugin's worker, so the
+// shipped 1.0.0 (styles + script in one package) never showed its redesign in the real app.
+test('the redesign package has no script, and the companion has no styles', async () => {
+  const [design, companion] = await build();
+  assert.equal(design.manifest.entrypoints.script, undefined);
+  assert.ok(design.manifest.entrypoints.styles.length > 0);
+  assert.deepEqual(design.manifest.permissions, ['style.register', 'scene.register']);
+  assert.equal(design.manifest.settingsSchema, undefined);
+  assert.deepEqual(Object.keys(companion.manifest.entrypoints), ['script']);
+  assert.ok(!companion.manifest.permissions.some((permission) => /^(style|scene)\./.test(permission)));
+  assert.equal(design.manifest.version, companion.manifest.version);
 });
 
 test('script registers the page, renders within block limits and seeks from the lyric index', async () => {
@@ -57,7 +73,7 @@ test('script registers the page, renders within block limits and seeks from the 
       previous: record('previous'),
     },
     lyrics: { get: async () => ({ lines: [], timedLines, currentLine: 61 }) },
-    settings: { get: async () => ({ homeArrangement: 'Stations first', style: 'Liquid Glass' }) },
+    settings: { get: async () => ({ homeArrangement: 'Stations first' }) },
     layout: { set: record('layout.set'), clear: record('layout.clear') },
     navigation: { register: record('navigation.register') },
     pages: {
@@ -89,15 +105,19 @@ test('script registers the page, renders within block limits and seeks from the 
   handlers['ui.action']({ slot: 'page', pageId: 'other', id: 'next' });
   assert.equal(JSON.stringify(calls.filter(([name]) => name === 'seek' || name === 'next')), '[["seek",70000]]');
 
-  // Style flag: the label the glass stylesheet matches, and back to plain on Classic.
-  const labels = () => calls.filter(([name]) => name === 'navigation.register').map(([, entry]) => entry.label);
-  assert.equal(labels().at(-1), 'Now Playing\u200B');
-  const css = await readFile(new URL('../styles/60-liquid-glass.css', import.meta.url), 'utf8');
-  assert.ok(css.includes(`aria-label^='Now Playing\\200B'`));
+  assert.equal(calls.find(([name]) => name === 'navigation.register')[1].label, 'Now Playing');
 
-  await handlers['settings.changed']({ homeArrangement: 'Default', style: 'Classic' });
+  await handlers['settings.changed']({ homeArrangement: 'Default' });
   assert.ok(calls.some(([name, target]) => name === 'layout.clear' && target === 'home'));
-  assert.equal(labels().at(-1), 'Now Playing');
   stop();
   assert.equal(calls.filter(([name]) => name === 'warn').length, 0);
+});
+
+// Regression: 1.0.0 keyed Liquid Glass on a sidebar aria-label the real host never renders (it uses
+// title, and Android renders no plugin entries at all). Glass must follow the host's own attribute.
+test('Liquid Glass follows the host Material setting, not plugin markup', async () => {
+  const css = await readFile(new URL('../styles/60-liquid-glass.css', import.meta.url), 'utf8');
+  const selectors = css.replace(/\/\*[\s\S]*?\*\//g, '').match(/^[^\s@}][^{]*\{/gm);
+  assert.deepEqual(selectors.filter((rule) => !/^@/.test(rule)).slice(0, 1), [":root[data-material='translucent'] {"]);
+  assert.ok(!/\[(aria-label|title)\^?=|\\200B/.test(css));
 });

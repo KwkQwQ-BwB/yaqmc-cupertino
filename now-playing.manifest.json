@@ -1,0 +1,42 @@
+{
+  "manifestVersion": 1,
+  "apiVersion": 4,
+  "id": "dev.cupertino.yaqmc.now-playing",
+  "name": "Cupertino Now Playing",
+  "description": "Optional companion to Cupertino: a Now Playing page with a tappable lyric index, and a Home arrangement setting.",
+  "version": "1.1.0",
+  "license": "MIT",
+  "engines": {
+    "yaqmc": ">=0.1.1"
+  },
+  "homepage": "https://github.com/KwkQwQ-BwB/yaqmc-cupertino",
+  "repository": "https://github.com/KwkQwQ-BwB/yaqmc-cupertino",
+  "entrypoints": {
+    "script": "main.js"
+  },
+  "permissions": [
+    "track.read",
+    "lyrics.read",
+    "player.read",
+    "player.control",
+    "ui.pages",
+    "ui.navigation",
+    "ui.layout"
+  ],
+  "settingsSchema": {
+    "fields": [
+      {
+        "id": "homeArrangement",
+        "type": "select",
+        "label": "Home arrangement",
+        "description": "Order of the Home sections. Applies immediately.",
+        "options": [
+          "Default",
+          "Stations first",
+          "Essentials only"
+        ],
+        "default": "Default"
+      }
+    ]
+  }
+}

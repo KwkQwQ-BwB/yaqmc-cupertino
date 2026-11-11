@@ -1,0 +1,4026 @@
+{
+  "host": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) @yaqmc/desktop/0.1.1 Chrome/150.0.7871.250 Electron/43.8.3 Safari/537.36",
+    "url": "http://127.0.0.1:1420/?uiDiagnostics=1",
+    "platform": "linux"
+  },
+  "checks": [
+    {
+      "name": "enable: all design stylesheets are in the document",
+      "ok": true,
+      "detail": 9
+    },
+    {
+      "name": "enable: nodes sit in the plugin layer",
+      "ok": true,
+      "detail": [
+        "yaqmc-plugin-style.dev-cupertino-yaqmc"
+      ]
+    },
+    {
+      "name": "enable: sidebar is 228px",
+      "ok": true,
+      "detail": [
+        "212px",
+        "228px"
+      ]
+    },
+    {
+      "name": "enable: accent is the Music red",
+      "ok": true,
+      "detail": [
+        "#A8C95E",
+        "#fa233b"
+      ]
+    },
+    {
+      "name": "enable: player bar is rounded",
+      "ok": true,
+      "detail": [
+        "0px",
+        "18px"
+      ]
+    },
+    {
+      "name": "enable: Now Playing entry from the companion",
+      "ok": true
+    },
+    {
+      "name": "page Home: reached, styles applied",
+      "ok": true,
+      "detail": {
+        "route": "Home",
+        "nodes": 9
+      }
+    },
+    {
+      "name": "page Search: reached, styles applied",
+      "ok": true,
+      "detail": {
+        "route": "Search",
+        "nodes": 9
+      }
+    },
+    {
+      "name": "page Explore: reached, styles applied",
+      "ok": true,
+      "detail": {
+        "route": "Explore",
+        "nodes": 9
+      }
+    },
+    {
+      "name": "page Favorites: reached, styles applied",
+      "ok": true,
+      "detail": {
+        "route": "Favorites",
+        "nodes": 9
+      }
+    },
+    {
+      "name": "page Playlists: reached, styles applied",
+      "ok": true,
+      "detail": {
+        "route": "Playlists",
+        "nodes": 9
+      }
+    },
+    {
+      "name": "page Recently played: reached, styles applied",
+      "ok": true,
+      "detail": {
+        "route": "Recently played",
+        "nodes": 9
+      }
+    },
+    {
+      "name": "page Statistics: reached, styles applied",
+      "ok": true,
+      "detail": {
+        "route": "Statistics",
+        "nodes": 9
+      }
+    },
+    {
+      "name": "page Settings: reached, styles applied",
+      "ok": true,
+      "detail": {
+        "route": "Settings",
+        "nodes": 9
+      }
+    },
+    {
+      "name": "page Now Playing: reached, styles applied",
+      "ok": true,
+      "detail": {
+        "route": "Now Playing",
+        "nodes": 9
+      }
+    },
+    {
+      "name": "desktop/light/Classic: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "light",
+        "material": "opaque",
+        "player": "none",
+        "sidebarRadius": "0px"
+      }
+    },
+    {
+      "name": "desktop/light/Liquid Glass: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "light",
+        "material": "translucent",
+        "player": "blur(22px) saturate(1.9)",
+        "sidebarRadius": "24px"
+      }
+    },
+    {
+      "name": "desktop/dark/Classic: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "dark",
+        "material": "opaque",
+        "player": "none",
+        "sidebarRadius": "0px"
+      }
+    },
+    {
+      "name": "desktop/dark/Liquid Glass: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "dark",
+        "material": "translucent",
+        "player": "blur(22px) saturate(1.9)",
+        "sidebarRadius": "24px"
+      }
+    },
+    {
+      "name": "phone-portrait/light/Classic: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "light",
+        "material": "opaque",
+        "player": "none",
+        "sidebarRadius": "0px"
+      }
+    },
+    {
+      "name": "phone-portrait/light/Liquid Glass: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "light",
+        "material": "translucent",
+        "player": "blur(22px) saturate(1.9)",
+        "sidebarRadius": "0px"
+      }
+    },
+    {
+      "name": "phone-portrait/dark/Classic: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "dark",
+        "material": "opaque",
+        "player": "none",
+        "sidebarRadius": "0px"
+      }
+    },
+    {
+      "name": "phone-portrait/dark/Liquid Glass: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "dark",
+        "material": "translucent",
+        "player": "blur(22px) saturate(1.9)",
+        "sidebarRadius": "0px"
+      }
+    },
+    {
+      "name": "phone-landscape/light/Classic: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "light",
+        "material": "opaque",
+        "player": "none",
+        "sidebarRadius": "0px"
+      }
+    },
+    {
+      "name": "phone-landscape/light/Liquid Glass: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "light",
+        "material": "translucent",
+        "player": "blur(22px) saturate(1.9)",
+        "sidebarRadius": "24px"
+      }
+    },
+    {
+      "name": "phone-landscape/dark/Classic: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "dark",
+        "material": "opaque",
+        "player": "none",
+        "sidebarRadius": "0px"
+      }
+    },
+    {
+      "name": "phone-landscape/dark/Liquid Glass: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "dark",
+        "material": "translucent",
+        "player": "blur(22px) saturate(1.9)",
+        "sidebarRadius": "24px"
+      }
+    },
+    {
+      "name": "tablet/light/Classic: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "light",
+        "material": "opaque",
+        "player": "none",
+        "sidebarRadius": "0px"
+      }
+    },
+    {
+      "name": "tablet/light/Liquid Glass: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "light",
+        "material": "translucent",
+        "player": "blur(22px) saturate(1.9)",
+        "sidebarRadius": "24px"
+      }
+    },
+    {
+      "name": "tablet/dark/Classic: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "dark",
+        "material": "opaque",
+        "player": "none",
+        "sidebarRadius": "0px"
+      }
+    },
+    {
+      "name": "tablet/dark/Liquid Glass: styles applied, theme and glass match",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "theme": "dark",
+        "material": "translucent",
+        "player": "blur(22px) saturate(1.9)",
+        "sidebarRadius": "24px"
+      }
+    },
+    {
+      "name": "disable: no style nodes and computed chrome equals stock",
+      "ok": true,
+      "detail": {
+        "nodes": 0,
+        "sidebar": "212px",
+        "accent": "#A8C95E"
+      }
+    },
+    {
+      "name": "re-enable: styles back",
+      "ok": true,
+      "detail": 9
+    },
+    {
+      "name": "cold restart: styles applied without opening Now Playing",
+      "ok": true,
+      "detail": {
+        "nodes": 9,
+        "route": "Home"
+      }
+    },
+    {
+      "name": "supplementary: detail, queue, comments and lyrics rendered with the packaged CSS",
+      "ok": true,
+      "detail": 20
+    }
+  ],
+  "states": {
+    "stock": {
+      "route": "Home",
+      "material": "opaque",
+      "glass": false,
+      "theme": "light",
+      "hostKind": "electron",
+      "viewport": [
+        1280,
+        800
+      ],
+      "styleNodes": 0,
+      "layers": [],
+      "cssRules": 0,
+      "accent": "#A8C95E",
+      "sidebar": {
+        "width": "212px",
+        "background-color": "rgba(235, 235, 230, 0.996)",
+        "border-radius": "0px",
+        "margin-top": "0px",
+        "backdrop-filter": "none"
+      },
+      "topbar": {
+        "height": "54px",
+        "background-color": "color(srgb 0.962294 0.962294 0.947211 / 0.998431)"
+      },
+      "player": {
+        "border-radius": "0px",
+        "background-color": "rgb(249, 249, 245)",
+        "backdrop-filter": "none",
+        "box-shadow": "rgba(0, 0, 0, 0.06) 0px -10px 30px 0px"
+      },
+      "heading": null,
+      "button": null,
+      "body": {
+        "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+      }
+    },
+    "previousEnabled": {
+      "version": "1.0.0",
+      "route": "Home",
+      "material": "opaque",
+      "glass": false,
+      "theme": "light",
+      "hostKind": "electron",
+      "viewport": [
+        1280,
+        800
+      ],
+      "styleNodes": 0,
+      "layers": [],
+      "cssRules": 0,
+      "accent": "#A8C95E",
+      "sidebar": {
+        "width": "212px",
+        "background-color": "rgba(235, 235, 230, 0.996)",
+        "border-radius": "0px",
+        "margin-top": "0px",
+        "backdrop-filter": "none"
+      },
+      "topbar": {
+        "height": "54px",
+        "background-color": "color(srgb 0.962294 0.962294 0.947211 / 0.998431)"
+      },
+      "player": {
+        "border-radius": "0px",
+        "background-color": "rgb(249, 249, 245)",
+        "backdrop-filter": "none",
+        "box-shadow": "rgba(0, 0, 0, 0.06) 0px -10px 30px 0px"
+      },
+      "heading": null,
+      "button": null,
+      "body": {
+        "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+      }
+    },
+    "enabled": {
+      "route": "Home",
+      "material": "opaque",
+      "glass": false,
+      "theme": "light",
+      "hostKind": "electron",
+      "viewport": [
+        1280,
+        800
+      ],
+      "styleNodes": 9,
+      "layers": [
+        "yaqmc-plugin-style.dev-cupertino-yaqmc"
+      ],
+      "cssRules": 215,
+      "accent": "#fa233b",
+      "sidebar": {
+        "width": "228px",
+        "background-color": "rgba(240, 240, 243, 0.96)",
+        "border-radius": "0px",
+        "margin-top": "0px",
+        "backdrop-filter": "none"
+      },
+      "topbar": {
+        "height": "52px",
+        "background-color": "rgba(255, 255, 255, 0.96)"
+      },
+      "player": {
+        "border-radius": "18px",
+        "background-color": "rgba(248, 248, 250, 0.984)",
+        "backdrop-filter": "none",
+        "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+      },
+      "heading": null,
+      "button": null,
+      "body": {
+        "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+      }
+    },
+    "pages": {
+      "Home": {
+        "route": "Home",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": null,
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "Search": {
+        "route": "Search",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "33.28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.73216px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "Explore": {
+        "route": "Explore",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "33.28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.73216px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "Favorites": {
+        "route": "Favorites",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "33.28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.73216px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "Playlists": {
+        "route": "Playlists",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "33.28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.73216px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "Recently played": {
+        "route": "Recently played",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "33.28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.73216px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "Statistics": {
+        "route": "Statistics",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "44px",
+          "font-weight": "700",
+          "letter-spacing": "-0.08px"
+        },
+        "button": {
+          "border-radius": "10px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "Settings": {
+        "route": "Settings",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "33.28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.73216px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "Now Playing": {
+        "route": "Now Playing",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "33.28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.73216px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      }
+    },
+    "content": {
+      "homeCards": 0,
+      "playing": false
+    },
+    "queue": {
+      "route": "Home",
+      "material": "opaque",
+      "glass": false,
+      "theme": "light",
+      "hostKind": "electron",
+      "viewport": [
+        1280,
+        800
+      ],
+      "styleNodes": 9,
+      "layers": [
+        "yaqmc-plugin-style.dev-cupertino-yaqmc"
+      ],
+      "cssRules": 215,
+      "accent": "#fa233b",
+      "sidebar": {
+        "width": "228px",
+        "background-color": "rgba(240, 240, 243, 0.96)",
+        "border-radius": "0px",
+        "margin-top": "0px",
+        "backdrop-filter": "none"
+      },
+      "topbar": {
+        "height": "52px",
+        "background-color": "rgba(255, 255, 255, 0.96)"
+      },
+      "player": {
+        "border-radius": "18px",
+        "background-color": "rgba(248, 248, 250, 0.984)",
+        "backdrop-filter": "none",
+        "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+      },
+      "heading": null,
+      "button": null,
+      "body": {
+        "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+      }
+    },
+    "matrix": {
+      "desktop/light/Classic/Home": {
+        "route": "Home",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "20px",
+          "font-weight": "700",
+          "letter-spacing": "-0.4px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "desktop/light/Classic/Settings": {
+        "route": "Settings",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "33.28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.73216px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "desktop/light/Classic/Now Playing": {
+        "route": "Now Playing",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "33.28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.73216px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "desktop/light/Liquid Glass/Home": {
+        "route": "Home",
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "218px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "20px",
+          "font-weight": "700",
+          "letter-spacing": "-0.4px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "desktop/light/Liquid Glass/Settings": {
+        "route": "Settings",
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "218px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "33.28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.73216px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "desktop/light/Liquid Glass/Now Playing": {
+        "route": "Now Playing",
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "218px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "33.28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.73216px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "desktop/dark/Classic/Home": {
+        "route": "Home",
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(28, 28, 30, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(44, 44, 46, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "20px",
+          "font-weight": "700",
+          "letter-spacing": "-0.4px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "desktop/dark/Classic/Settings": {
+        "route": "Settings",
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(28, 28, 30, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(44, 44, 46, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "33.28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.73216px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "desktop/dark/Classic/Now Playing": {
+        "route": "Now Playing",
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(28, 28, 30, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(44, 44, 46, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "33.28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.73216px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "desktop/dark/Liquid Glass/Home": {
+        "route": "Home",
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "218px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "20px",
+          "font-weight": "700",
+          "letter-spacing": "-0.4px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "desktop/dark/Liquid Glass/Settings": {
+        "route": "Settings",
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "218px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "33.28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.73216px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "desktop/dark/Liquid Glass/Now Playing": {
+        "route": "Now Playing",
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "218px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "33.28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.73216px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-portrait/light/Classic/Home": {
+        "route": "Home",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "16px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "22px",
+          "font-weight": "700",
+          "letter-spacing": "-0.44px"
+        },
+        "button": {
+          "border-radius": "9px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-portrait/light/Classic/Settings": {
+        "route": "Settings",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgb(242, 242, 247)"
+        },
+        "player": {
+          "border-radius": "16px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "34px",
+          "font-weight": "700",
+          "letter-spacing": "-0.816px"
+        },
+        "button": {
+          "border-radius": "9px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-portrait/light/Classic/Now Playing": {
+        "route": "Now Playing",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgb(242, 242, 247)"
+        },
+        "player": {
+          "border-radius": "16px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "34px",
+          "font-weight": "700",
+          "letter-spacing": "-0.816px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-portrait/light/Liquid Glass/Home": {
+        "route": "Home",
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(240, 240, 243, 0.89)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "28px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "22px",
+          "font-weight": "700",
+          "letter-spacing": "-0.44px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-portrait/light/Liquid Glass/Settings": {
+        "route": "Settings",
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(240, 240, 243, 0.89)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "28px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "34px",
+          "font-weight": "700",
+          "letter-spacing": "-0.816px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-portrait/light/Liquid Glass/Now Playing": {
+        "route": "Now Playing",
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(240, 240, 243, 0.89)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "28px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "34px",
+          "font-weight": "700",
+          "letter-spacing": "-0.816px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-portrait/dark/Classic/Home": {
+        "route": "Home",
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0.96)"
+        },
+        "player": {
+          "border-radius": "16px",
+          "background-color": "rgba(30, 30, 32, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "22px",
+          "font-weight": "700",
+          "letter-spacing": "-0.44px"
+        },
+        "button": {
+          "border-radius": "9px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-portrait/dark/Classic/Settings": {
+        "route": "Settings",
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgb(0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "16px",
+          "background-color": "rgba(30, 30, 32, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "34px",
+          "font-weight": "700",
+          "letter-spacing": "-0.816px"
+        },
+        "button": {
+          "border-radius": "9px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-portrait/dark/Classic/Now Playing": {
+        "route": "Now Playing",
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgb(0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "16px",
+          "background-color": "rgba(30, 30, 32, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "34px",
+          "font-weight": "700",
+          "letter-spacing": "-0.816px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-portrait/dark/Liquid Glass/Home": {
+        "route": "Home",
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(36, 36, 38, 0.89)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "28px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "22px",
+          "font-weight": "700",
+          "letter-spacing": "-0.44px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-portrait/dark/Liquid Glass/Settings": {
+        "route": "Settings",
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(36, 36, 38, 0.89)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "28px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "34px",
+          "font-weight": "700",
+          "letter-spacing": "-0.816px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-portrait/dark/Liquid Glass/Now Playing": {
+        "route": "Now Playing",
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(36, 36, 38, 0.89)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "28px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "34px",
+          "font-weight": "700",
+          "letter-spacing": "-0.816px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-landscape/light/Classic/Home": {
+        "route": "Home",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          844,
+          390
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "60px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "20px",
+          "font-weight": "700",
+          "letter-spacing": "-0.4px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-landscape/light/Classic/Settings": {
+        "route": "Settings",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          844,
+          390
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "60px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-landscape/light/Classic/Now Playing": {
+        "route": "Now Playing",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          844,
+          390
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "60px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-landscape/light/Liquid Glass/Home": {
+        "route": "Home",
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          844,
+          390
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "50px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "20px",
+          "font-weight": "700",
+          "letter-spacing": "-0.4px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-landscape/light/Liquid Glass/Settings": {
+        "route": "Settings",
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          844,
+          390
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "50px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-landscape/light/Liquid Glass/Now Playing": {
+        "route": "Now Playing",
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          844,
+          390
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "50px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-landscape/dark/Classic/Home": {
+        "route": "Home",
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          844,
+          390
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "60px",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(28, 28, 30, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(44, 44, 46, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "20px",
+          "font-weight": "700",
+          "letter-spacing": "-0.4px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-landscape/dark/Classic/Settings": {
+        "route": "Settings",
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          844,
+          390
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "60px",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(28, 28, 30, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(44, 44, 46, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-landscape/dark/Classic/Now Playing": {
+        "route": "Now Playing",
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          844,
+          390
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "60px",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(28, 28, 30, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(44, 44, 46, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-landscape/dark/Liquid Glass/Home": {
+        "route": "Home",
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          844,
+          390
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "50px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "20px",
+          "font-weight": "700",
+          "letter-spacing": "-0.4px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-landscape/dark/Liquid Glass/Settings": {
+        "route": "Settings",
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          844,
+          390
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "50px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "phone-landscape/dark/Liquid Glass/Now Playing": {
+        "route": "Now Playing",
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          844,
+          390
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "50px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "tablet/light/Classic/Home": {
+        "route": "Home",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1024,
+          768
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "204px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "20px",
+          "font-weight": "700",
+          "letter-spacing": "-0.4px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "tablet/light/Classic/Settings": {
+        "route": "Settings",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1024,
+          768
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "204px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "tablet/light/Classic/Now Playing": {
+        "route": "Now Playing",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1024,
+          768
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "204px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "tablet/light/Liquid Glass/Home": {
+        "route": "Home",
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1024,
+          768
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "194px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "20px",
+          "font-weight": "700",
+          "letter-spacing": "-0.4px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "tablet/light/Liquid Glass/Settings": {
+        "route": "Settings",
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1024,
+          768
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "194px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "tablet/light/Liquid Glass/Now Playing": {
+        "route": "Now Playing",
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "electron",
+        "viewport": [
+          1024,
+          768
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "194px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "tablet/dark/Classic/Home": {
+        "route": "Home",
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          1024,
+          768
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "204px",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(28, 28, 30, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(44, 44, 46, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "20px",
+          "font-weight": "700",
+          "letter-spacing": "-0.4px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "tablet/dark/Classic/Settings": {
+        "route": "Settings",
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          1024,
+          768
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "204px",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(28, 28, 30, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(44, 44, 46, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": {
+          "border-radius": "7px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "tablet/dark/Classic/Now Playing": {
+        "route": "Now Playing",
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          1024,
+          768
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "204px",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(28, 28, 30, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(44, 44, 46, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "tablet/dark/Liquid Glass/Home": {
+        "route": "Home",
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          1024,
+          768
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "194px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "20px",
+          "font-weight": "700",
+          "letter-spacing": "-0.4px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "tablet/dark/Liquid Glass/Settings": {
+        "route": "Settings",
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          1024,
+          768
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "194px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": {
+          "border-radius": "999px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "tablet/dark/Liquid Glass/Now Playing": {
+        "route": "Now Playing",
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "electron",
+        "viewport": [
+          1024,
+          768
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "194px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "28px",
+          "font-weight": "700",
+          "letter-spacing": "-0.616px"
+        },
+        "button": null,
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      }
+    },
+    "disabled": {
+      "route": "Home",
+      "material": "opaque",
+      "glass": false,
+      "theme": "light",
+      "hostKind": "electron",
+      "viewport": [
+        1280,
+        800
+      ],
+      "styleNodes": 0,
+      "layers": [],
+      "cssRules": 0,
+      "accent": "#A8C95E",
+      "sidebar": {
+        "width": "212px",
+        "background-color": "rgba(235, 235, 230, 0.996)",
+        "border-radius": "0px",
+        "margin-top": "0px",
+        "backdrop-filter": "none"
+      },
+      "topbar": {
+        "height": "54px",
+        "background-color": "color(srgb 0.962294 0.962294 0.947211 / 0.998431)"
+      },
+      "player": {
+        "border-radius": "0px",
+        "background-color": "rgb(249, 249, 245)",
+        "backdrop-filter": "none",
+        "box-shadow": "rgba(0, 0, 0, 0.06) 0px -10px 30px 0px"
+      },
+      "heading": {
+        "font-size": "26px",
+        "font-weight": "650",
+        "letter-spacing": "-0.78px"
+      },
+      "button": {
+        "border-radius": "999px"
+      },
+      "body": {
+        "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+      }
+    },
+    "coldRestart": {
+      "route": "Home",
+      "material": "opaque",
+      "glass": false,
+      "theme": "light",
+      "hostKind": "electron",
+      "viewport": [
+        1280,
+        800
+      ],
+      "styleNodes": 9,
+      "layers": [
+        "yaqmc-plugin-style.dev-cupertino-yaqmc"
+      ],
+      "cssRules": 215,
+      "accent": "#fa233b",
+      "sidebar": {
+        "width": "228px",
+        "background-color": "rgba(240, 240, 243, 0.96)",
+        "border-radius": "0px",
+        "margin-top": "0px",
+        "backdrop-filter": "none"
+      },
+      "topbar": {
+        "height": "52px",
+        "background-color": "rgba(255, 255, 255, 0.96)"
+      },
+      "player": {
+        "border-radius": "18px",
+        "background-color": "rgba(248, 248, 250, 0.984)",
+        "backdrop-filter": "none",
+        "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+      },
+      "heading": null,
+      "button": null,
+      "body": {
+        "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+      }
+    },
+    "supplementary": {
+      "supplementary-desktop-light-classic/detail": {
+        "route": null,
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-desktop-light-classic/queue": {
+        "route": null,
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-desktop-light-classic/comments": {
+        "route": null,
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-desktop-light-classic/lyrics": {
+        "route": null,
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-desktop-light-glass/detail": {
+        "route": null,
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "218px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-desktop-light-glass/queue": {
+        "route": null,
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "218px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-desktop-light-glass/comments": {
+        "route": null,
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "218px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-desktop-light-glass/lyrics": {
+        "route": null,
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "218px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-desktop-dark-classic/detail": {
+        "route": null,
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(28, 28, 30, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(44, 44, 46, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-desktop-dark-classic/queue": {
+        "route": null,
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(28, 28, 30, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(44, 44, 46, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-desktop-dark-classic/comments": {
+        "route": null,
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(28, 28, 30, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(44, 44, 46, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-desktop-dark-classic/lyrics": {
+        "route": null,
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "228px",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(28, 28, 30, 0.96)"
+        },
+        "player": {
+          "border-radius": "18px",
+          "background-color": "rgba(44, 44, 46, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-desktop-dark-glass/detail": {
+        "route": null,
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "218px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-desktop-dark-glass/queue": {
+        "route": null,
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "218px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-desktop-dark-glass/comments": {
+        "route": null,
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "218px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-desktop-dark-glass/lyrics": {
+        "route": null,
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "fake",
+        "viewport": [
+          1280,
+          800
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "218px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "border-radius": "24px",
+          "margin-top": "10px",
+          "backdrop-filter": "blur(22px) saturate(1.9)"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "30px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "30.72px",
+          "font-weight": "700",
+          "letter-spacing": "-0.67584px"
+        },
+        "button": {
+          "border-radius": "0px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-phone-portrait-light-classic/lyrics": {
+        "route": "Home",
+        "material": "opaque",
+        "glass": false,
+        "theme": "light",
+        "hostKind": "fake",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(240, 240, 243, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(255, 255, 255, 0.96)"
+        },
+        "player": {
+          "border-radius": "16px",
+          "background-color": "rgba(248, 248, 250, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.14) 0px 8px 28px 0px"
+        },
+        "heading": {
+          "font-size": "22px",
+          "font-weight": "700",
+          "letter-spacing": "-0.44px"
+        },
+        "button": {
+          "border-radius": "12px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-phone-portrait-light-glass/lyrics": {
+        "route": "Home",
+        "material": "translucent",
+        "glass": true,
+        "theme": "light",
+        "hostKind": "fake",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa233b",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(240, 240, 243, 0.89)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "28px",
+          "background-color": "rgba(255, 255, 255, 0.48)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.55) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.14) 0px 10px 34px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "22px",
+          "font-weight": "700",
+          "letter-spacing": "-0.44px"
+        },
+        "button": {
+          "border-radius": "12px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-phone-portrait-dark-classic/lyrics": {
+        "route": "Home",
+        "material": "opaque",
+        "glass": false,
+        "theme": "dark",
+        "hostKind": "fake",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(36, 36, 38, 0.96)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0.96)"
+        },
+        "player": {
+          "border-radius": "16px",
+          "background-color": "rgba(30, 30, 32, 0.984)",
+          "backdrop-filter": "none",
+          "box-shadow": "rgba(255, 255, 255, 0.12) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.5) 0px 10px 30px 0px"
+        },
+        "heading": {
+          "font-size": "22px",
+          "font-weight": "700",
+          "letter-spacing": "-0.44px"
+        },
+        "button": {
+          "border-radius": "12px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      },
+      "supplementary-phone-portrait-dark-glass/lyrics": {
+        "route": "Home",
+        "material": "translucent",
+        "glass": true,
+        "theme": "dark",
+        "hostKind": "fake",
+        "viewport": [
+          390,
+          844
+        ],
+        "styleNodes": 9,
+        "layers": [
+          "yaqmc-plugin-style.dev-cupertino-yaqmc"
+        ],
+        "cssRules": 215,
+        "accent": "#fa2d48",
+        "sidebar": {
+          "width": "auto",
+          "background-color": "rgba(36, 36, 38, 0.89)",
+          "border-radius": "0px",
+          "margin-top": "0px",
+          "backdrop-filter": "none"
+        },
+        "topbar": {
+          "height": "52px",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "player": {
+          "border-radius": "28px",
+          "background-color": "rgba(44, 44, 48, 0.46)",
+          "backdrop-filter": "blur(22px) saturate(1.9)",
+          "box-shadow": "rgba(255, 255, 255, 0.28) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.5) 0px 12px 40px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px"
+        },
+        "heading": {
+          "font-size": "22px",
+          "font-weight": "700",
+          "letter-spacing": "-0.44px"
+        },
+        "button": {
+          "border-radius": "12px"
+        },
+        "body": {
+          "font-family": "\"YAQMC Text\", \"SF Pro Text\", \"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Noto Sans CJK SC\", \"Noto Sans SC\", \"Source Han Sans CN\", \"Microsoft YaHei\", sans-serif"
+        }
+      }
+    }
+  },
+  "update": {
+    "from": "1.0.0",
+    "to": "1.1.0",
+    "removedPermissions": [
+      "lyrics.read",
+      "player.control",
+      "player.read",
+      "track.read",
+      "ui.layout",
+      "ui.navigation",
+      "ui.pages"
+    ],
+    "confirmations": [
+      "unverified-source"
+    ],
+    "phase": "completed",
+    "error": null
+  },
+  "installed": [
+    {
+      "id": "dev.cupertino.yaqmc",
+      "version": "1.1.0",
+      "enabled": true,
+      "sha256": "8004f1d4107dc7e71c163fb311f072b276be22ad7969049b2d393abb7e987b8e"
+    },
+    {
+      "id": "dev.cupertino.yaqmc.now-playing",
+      "version": "1.1.0",
+      "enabled": true,
+      "sha256": "1642f64b2c9bb632a72bd0d22ff40119e0c6d645a5bd5a18da0b4df2cc2020d7"
+    }
+  ]
+}

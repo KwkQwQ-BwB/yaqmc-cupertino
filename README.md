@@ -1,8 +1,20 @@
 # Cupertino for YAQMC
 
-An Apple-inspired redesign of [YAQMC](https://github.com/YAQMC/YAQMC), shipped as one plugin with three
-deliberately different layout systems: **macOS** on desktop, **iOS** on phones, **iPadOS** on tablets.
-Each comes in two styles you switch in Settings: **Classic** (solid, quiet chrome) and **Liquid Glass**.
+An Apple-inspired redesign of [YAQMC](https://github.com/YAQMC/YAQMC) with three deliberately different
+layout systems: **macOS** on desktop, **iOS** on phones, **iPadOS** on tablets. Each comes in two styles:
+**Classic** (solid, quiet chrome) and **Liquid Glass**, switched with YAQMC's own
+**Settings → Appearance → Material**.
+
+Two packages:
+
+| Package | What it is |
+| --- | --- |
+| `dev.cupertino.yaqmc` — **Cupertino** | The whole redesign and the lyrics scene. Stylesheets only, no script. |
+| `dev.cupertino.yaqmc.now-playing` — **Cupertino Now Playing** | Optional. A Now Playing page and the Home arrangement setting. Script only, no styles. |
+
+They are split on purpose: YAQMC 0.1.1 deletes a plugin's stylesheets when it starts that plugin's script
+(see [Compatibility](#compatibility)), which is why 1.0.0, one package with both, showed only its Now
+Playing entry and none of the redesign.
 
 | Desktop — macOS | Tablet — iPadOS | Phone — iOS |
 | --- | --- | --- |
@@ -41,52 +53,72 @@ Each comes in two styles you switch in Settings: **Classic** (solid, quiet chrom
 
 <img src="docs/screenshots/phone-playlist.jpg" width="200" alt="Playlist"> <img src="docs/screenshots/phone-library.jpg" width="200" alt="Library"> <img src="docs/screenshots/phone-now-playing.jpg" width="200" alt="Now Playing"> <img src="docs/screenshots/phone-settings-dark.jpg" width="200" alt="Settings, dark">
 
-Captured from the YAQMC 0.1.1 web client with its offline fixture provider, on Linux (so the typeface is a
-fallback; on Apple devices the host's font stack resolves to San Francisco).
+Captured from the YAQMC 0.1.1 web client with its offline fixture provider and the stylesheets inserted
+directly, on Linux (so the typeface is a fallback; on Apple devices the host's font stack resolves to San
+Francisco). Screenshots from the installed plugin in the real app are in
+[`docs/verification/`](docs/verification/).
 
 </details>
 
 ## Install
 
-1. Download `dev.cupertino.yaqmc-1.0.0.yaqmc-plugin` from the [latest release](../../releases/latest).
+1. Download `dev.cupertino.yaqmc-1.1.0.yaqmc-plugin` from the [latest release](../../releases/latest).
 2. In YAQMC open **Settings → Plugins → Choose file** and pick the package.
 3. Review the SHA-256 and the permissions below, then **Enable**. The redesign applies immediately;
    disabling the plugin restores the stock interface.
+4. Optional: install `dev.cupertino.yaqmc.now-playing-1.1.0.yaqmc-plugin` the same way for the Now
+   Playing page.
+
+**Updating from 1.0.0:** disable Cupertino, choose the 1.1.0 package (YAQMC offers it as an update and
+lists the permissions it drops), confirm, enable. The Style setting of 1.0.0 is gone; use Material.
 
 Optional, all in YAQMC's own settings:
 
-- **Plugins → Cupertino → Style**: **Classic** or **Liquid Glass**. Switches live, no restart.
-
+- **Appearance → Material**: **Opaque** is Classic, **Translucent** is Liquid Glass. Switches live.
 - **Lyrics presets → Cupertino** selects the bundled Now Playing scene (artwork rests smaller while paused).
-- **Appearance → Window material → Translucent** turns bars and menus into real glass on macOS.
 - **Appearance → Color palette**: the host's default palette becomes the Music red; any other palette you
   pick is respected as is.
-- **Plugins → Cupertino → Home arrangement**: Default, Stations first, or Essentials only.
+- **Plugins → Cupertino Now Playing → Home arrangement**: Default, Stations first, or Essentials only.
 
-### Supported YAQMC versions
+### Compatibility
 
-Plugin API v4 is required: **YAQMC 0.1.1 or newer** (`engines.yaqmc: ">=0.1.1"`), on Windows, Linux, macOS
-and Android. Checked against 0.1.1 (rendered) and 0.1.3-beta.3 (every targeted class verified in source).
+Plugin API v4 is required: **YAQMC 0.1.1 or newer** (`engines.yaqmc: ">=0.1.1"`).
+
+| Checked | How | Result |
+| --- | --- | --- |
+| YAQMC 0.1.1 desktop (`3563bac`), Electron 43, Linux | Installed through the host's install, update and enable flow into an isolated QA profile with the real Core; [`tools/host-check.mjs`](tools/host-check.mjs) | 35/35 checks pass ([report](docs/verification/yaqmc-0.1.1-3563bac/report.json)) |
+| Same, with the host fix below | Same | 35/35 checks pass ([report](docs/verification/yaqmc-0.1.1-3563bac-host-fix/report.json)) |
+| 0.1.3-beta.3 | Class names checked in source only (1.0.0) | Not run |
+| Windows, macOS, Android hosts | — | **Not verified.** The Android and tablet layout systems were only exercised at those widths inside the Electron host |
+
+**Why 1.0.0 did not apply in the real app.** Core returned all nine stylesheets and the renderer inserted
+them, then `startScripts` started the plugin's worker and, before doing so, called `retireOnePlugin`, which
+removes every `style[data-yaqmc-plugin-style]` node of that plugin
+(`src/application/plugin-runtime.ts`, since `c870878`). Style-only plugins are unaffected, a plugin with
+styles *and* a script loses its CSS on every launch and enable. 1.1.0 avoids it by shipping the redesign
+without a script. A host fix (worker restarts keep resource-owned style nodes, with a regression test) is
+on the YAQMC branch `fix/plugin-restart-keeps-styles`; with it, 1.0.0 also renders (verified), but 1.1.0
+does not need it.
 
 ### Permissions
 
-| Permission | Why |
-| --- | --- |
-| `style.register`, `scene.register` | The redesign itself and the Cupertino lyrics scene |
-| `ui.pages`, `ui.navigation` | The host-rendered **Now Playing** page and its sidebar entry |
-| `track.read`, `player.read`, `lyrics.read` | Content of that page |
-| `player.control` (sensitive) | Its Previous / Play / Next buttons and tap-a-lyric-to-seek |
-| `ui.layout` | Applying the Home arrangement setting |
+| Package | Permission | Why |
+| --- | --- | --- |
+| Cupertino | `style.register`, `scene.register` | The redesign itself and the Cupertino lyrics scene |
+| Now Playing | `ui.pages`, `ui.navigation` | The host-rendered **Now Playing** page and its sidebar entry |
+| Now Playing | `track.read`, `player.read`, `lyrics.read` | Content of that page |
+| Now Playing | `player.control` (sensitive) | Its Previous / Play / Next buttons and tap-a-lyric-to-seek |
+| Now Playing | `ui.layout` | Applying the Home arrangement setting |
 
 No network, storage or account access.
 
 ## Styles
 
-| | Classic | Liquid Glass |
+| | Classic (Material: Opaque) | Liquid Glass (Material: Translucent) |
 | --- | --- | --- |
 | Canvas | Plain system background | Soft accent / blue / purple wash for the glass to refract |
 | Sidebar | Full-height source list | Inset floating glass pane with rounded corners |
-| Bars, sheets, menus | Dense tint (real blur only on macOS with the translucent material) | Real backdrop blur on every platform, specular top rim, capsule shapes |
+| Bars, sheets, menus | Dense tint | Real backdrop blur on every platform, specular top rim, capsule shapes |
 | Controls | Filled tints, rounded rectangles | Pills; primary buttons lit from above; segmented controls and selects as glass tracks |
 | Content cards | Flat fills | Tinted panes with a light rim, deliberately unblurred |
 
@@ -143,18 +175,16 @@ What the plugin API allows shaped this design. The constraints that matter:
    declaration therefore ships as `!important` (the build adds it). Side effects: a keyframe cannot
    animate a property the plugin also declares, and the user's accent can only be respected by leaving
    it alone, which is why the Music red applies to the default palette only.
-4. **No setting reaches CSS.** Plugin settings are readable from the script worker only, and the worker
-   has no DOM. The Style switch works around this: the script re-registers its sidebar entry with an
-   invisible U+200B appended to the label in Liquid Glass mode, the host renders it into the entry's
-   `aria-label`, and `styles/60-liquid-glass.css` keys off it with `:root:has(...)`. It depends on that
-   host markup, so it is limited to one flag; other toggles (density, accent) still use the host's own
-   Appearance settings.
+4. **No plugin setting reaches CSS**, and on 0.1.1 a styled plugin cannot also have a script (see
+   [Compatibility](#compatibility)). So the style switch is the host's own Appearance → Material, which
+   the host writes onto `<html data-material>` on every platform. 1.0.0 instead flagged the style through
+   the Now Playing entry's `aria-label`; the real host renders that label as `title`, and Android renders
+   no plugin entries at all, so it never worked outside a mock.
 5. **Live blur is switched off by the host on Windows, Linux and Android** for rendering performance.
-   Bars and menus use dense tints there; real glass is limited to macOS with the translucent material.
+   Classic uses dense tints there; Liquid Glass opts back in on its floating surfaces.
 6. **Plugin pages are block documents** (heading, text, stats, list, actions, notice, divider; 40 blocks,
-   50 list items, no images or custom layout), and navigation entries only appear in the sidebar's
-   Plugins section, never in the phone tab bar. On phones the Now Playing page is therefore not
-   reachable from the tab bar.
+   50 list items, no images or custom layout), and navigation entries only appear in the desktop sidebar's
+   Plugins section. The Android host renders none, so on Android the Now Playing page is not reachable.
 7. **Scripts see the current track, playback state and lyrics only.** There is no queue, library or
    search API, so the plugin page cannot show Up Next or browse content.
 8. **`ui.layout` covers Home only**: three sections, order and visibility.
@@ -167,7 +197,8 @@ What the plugin API allows shaped this design. The constraints that matter:
 ## Architecture
 
 ```
-manifest.json            entrypoints, permissions, settings schema
+manifest.json            Cupertino: styles and scene only
+now-playing.manifest.json  Cupertino Now Playing: script, permissions, settings schema
 styles/00-tokens.css     colour, shape, motion, type ramp (re-points host tokens)
 styles/10-foundation.css shared components: buttons, sliders, menus, tables, sheets, states
 styles/20-pages.css      page compositions shared by every layout
@@ -176,10 +207,11 @@ styles/40-layout-pc.css    layout system 1: macOS
 styles/41-layout-phone.css layout system 2: iOS on Android
 styles/42-layout-pad.css   layout system 3: iPadOS
 styles/50-platform-ios.css entry point for a future iOS host
-styles/60-liquid-glass.css Liquid Glass style, scoped under the style flag
+styles/60-liquid-glass.css Liquid Glass, scoped under :root[data-material='translucent']
 scenes/cupertino.*       lyrics scene (schema + scoped CSS)
 main.js                  Now Playing page and Home arrangement (plain JS, no bundler)
-tools/build.mjs          promotes declarations to !important, writes build/ and dist/*.yaqmc-plugin
+tools/build.mjs          promotes declarations to !important, writes build/<id>/ and dist/*.yaqmc-plugin
+tools/host-check.mjs     real-host install and computed-style check (see Development)
 test/                    build transform, package rules, script behaviour
 ```
 
@@ -190,8 +222,8 @@ any host, regular width goes to the tablet system on touch hosts and to the PC s
 
 YAQMC has no iOS host yet. When one reports `data-host-kind="ios"` and `data-platform="ios"`:
 
-- iPhone and iPad already select the phone and tablet systems (`ios` is in their selectors), the touch
-  type ramp, and real glass with the translucent material (`00-tokens.css`).
+- iPhone and iPad already select the phone and tablet systems (`ios` is in their selectors) and the touch
+  type ramp (`00-tokens.css`). None of this has run on an iOS host; there is none to test against.
 - [`styles/50-platform-ios.css`](styles/50-platform-ios.css) is where iOS-only behaviour goes. It already
   restores the back chevron on phones (no system back gesture) and native rubber-band scrolling.
 - Add `ios` to nothing else: `manifest.json` leaves `platforms` unset so the package is not excluded.
@@ -204,8 +236,8 @@ With an authenticated GitHub CLI:
 tools/publish.sh
 ```
 
-It creates the repository (topic `yaqmc-plugin`), pushes, and publishes Release `v<version>` with the
-package and `docs/release-notes.md`.
+It creates the repository (topic `yaqmc-plugin`), pushes, and publishes Release `v<version>` with both
+packages and `docs/release-notes.md`.
 
 ## Development
 
@@ -219,8 +251,23 @@ npm run build
 npm test
 ```
 
-`build/` is the unpacked plugin (loadable with YAQMC's Developer Mode); `dist/` holds the installable
-package.
+`build/<id>/` are the unpacked plugins (loadable with YAQMC's Developer Mode); `dist/` holds the
+installable packages.
+
+Real-host check (needs a YAQMC checkout with `node_modules`, `node apps/desktop/scripts/build.mjs --qa`,
+a `yaqmc-core` binary and `npm run dev` running there):
+
+```bash
+node tools/host-check.mjs ../yaqmc docs/verification/run dist/dev.cupertino.yaqmc-1.0.0.yaqmc-plugin
+```
+
+It creates a throwaway QA profile, installs the previous package, updates to the current one through the
+host's update transaction, installs the companion, then walks every primary page at desktop, phone
+portrait, phone landscape and tablet sizes in light and dark, Classic and Liquid Glass, disables,
+re-enables and cold-restarts, recording computed styles and screenshots. The real Core's music client
+ignores process proxies, so behind a proxy its catalog stays empty; detail pages, playback, lyrics, queue
+and comments are then covered by a supplementary pass on the host's offline fixture catalog with the
+packaged stylesheets inserted the way the host does.
 
 ## License
 

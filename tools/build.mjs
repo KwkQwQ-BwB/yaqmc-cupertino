@@ -1,4 +1,4 @@
-// Builds the installable plugin: build/ (unpacked, for Developer Mode) and dist/<id>-<version>.yaqmc-plugin.
+// Builds the installable plugins: build/<id>/ (unpacked, for Developer Mode) and dist/<id>-<version>.yaqmc-plugin.
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -100,10 +100,16 @@ function zipStore(files) {
   return Buffer.concat([...locals, directory, end]);
 }
 
-export async function build() {
+// One package per manifest. Styles and the script never share a package: YAQMC 0.1.1 removes a
+// plugin's style nodes whenever it (re)starts that plugin's worker (src/application/plugin-runtime.ts
+// startScripts -> retireOnePlugin), so a styled plugin with a script loses its CSS on every launch.
+export const MANIFESTS = ['manifest.json', 'now-playing.manifest.json'];
+
+async function pack(manifestName) {
   const text = async (name) => (await readFile(path.join(root, name), 'utf8')).replaceAll('\r\n', '\n');
-  const manifest = JSON.parse(await text('manifest.json'));
+  const manifest = JSON.parse(await text(manifestName));
   const { styles = [], scenes = [], script } = manifest.entrypoints;
+  if ((styles.length || scenes.length) && script) throw new Error(`${manifest.id}: styles and script in one package`);
   const files = [{ name: 'manifest.json', bytes: Buffer.from(`${JSON.stringify(manifest, null, 2)}\n`) }];
   for (const name of styles) {
     const css = importantize(await text(name));
@@ -117,24 +123,33 @@ export async function build() {
     const css = name.replace(/\.scene\.json$/, '.css');
     files.push({ name: css, bytes: Buffer.from(await text(css)) });
   }
-  const source = await text(script);
-  new Script(source, { filename: script });
-  files.push({ name: script, bytes: Buffer.from(source) });
+  if (script) {
+    const source = await text(script);
+    new Script(source, { filename: script });
+    files.push({ name: script, bytes: Buffer.from(source) });
+  }
   files.push({ name: 'LICENSE', bytes: Buffer.from(await text('LICENSE')) });
 
-  await rm(path.join(root, 'build'), { recursive: true, force: true });
+  const unpacked = path.join(root, 'build', manifest.id);
   for (const file of files) {
-    const target = path.join(root, 'build', file.name);
+    const target = path.join(unpacked, file.name);
     await mkdir(path.dirname(target), { recursive: true });
     await writeFile(target, file.bytes);
   }
   const output = path.join(root, 'dist', `${manifest.id}-${manifest.version}.yaqmc-plugin`);
   await mkdir(path.dirname(output), { recursive: true });
   await writeFile(output, zipStore(files));
-  return { output, files };
+  return { manifest, output, files };
+}
+
+export async function build() {
+  await rm(path.join(root, 'build'), { recursive: true, force: true });
+  const packages = [];
+  for (const name of MANIFESTS) packages.push(await pack(name));
+  return packages;
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  const { output, files } = await build();
-  process.stdout.write(`Packed ${files.length} files -> ${path.relative(root, output)}\n`);
+  for (const { output, files } of await build())
+    process.stdout.write(`Packed ${files.length} files -> ${path.relative(root, output)}\n`);
 }

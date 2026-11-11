@@ -1,6 +1,7 @@
-/* Liquid Glass style (Settings → Plugins → Cupertino → Style).
- * Active while the script's sidebar entry carries the U+200B flag (see main.js). Everything here is
- * scoped under that :has() so Classic is exactly the other stylesheets. Glass needs something to
+/* Liquid Glass style: on while the host's Settings → Appearance → Material is "Translucent".
+ * That is the only setting the host writes onto <html> on every platform, so the switch needs no
+ * script. Everything here is scoped under it so Classic (Material "Opaque") is exactly the other
+ * stylesheets. Glass needs something to
  * refract, so the canvas gains a soft accent wash and the chrome floats over it:
  * - the sidebar becomes an inset floating pane, bars and sheets become capsules of real glass;
  * - controls (buttons, segmented controls, search, menus) are lit from above with a specular rim;
@@ -8,7 +9,7 @@
  * The host turns live blur off on Windows/Linux/Android for repaint cost; Liquid Glass opts back in for
  * these small floating surfaces only, which is why Classic stays the default. */
 
-:root:has(.sidebar__item[aria-label^='Now Playing\200B']) {
+:root[data-material='translucent'] {
   --lg-fill: rgb(255 255 255 / 0.48);
   --lg-fill-strong: rgb(255 255 255 / 0.66);
   --lg-pane: rgb(255 255 255 / 0.5);

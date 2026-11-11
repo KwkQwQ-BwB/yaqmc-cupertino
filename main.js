@@ -1,6 +1,6 @@
 /* global definePlugin */
-// Cupertino script entrypoint (plain JavaScript, API v4). The visual redesign lives in styles/;
-// this adds the two things CSS cannot: a host-rendered "Now Playing" page with a tappable lyric
+// Cupertino Now Playing (plain JavaScript, API v4), the optional companion package. The redesign
+// itself ships script-free in the Cupertino package; this adds the two things CSS cannot: a host-rendered "Now Playing" page with a tappable lyric
 // index, and the Home arrangement setting applied through the host's layout knobs.
 
 const PAGE = 'now-playing';
@@ -9,12 +9,6 @@ const HOME = {
   'Essentials only': { hidden: ['recommended-playlists'] },
 };
 const LIST_WINDOW = 50; // host limit: 50 list items per block
-
-// Settings never reach CSS and the worker has no DOM, but the host renders this entry's label into the
-// sidebar's aria-label. A trailing U+200B (invisible, survives the host's trim) is the style flag that
-// styles/60-liquid-glass.css matches with :root:has(...).
-// shortcut: relies on the host's "<label> · <plugin>" aria-label format; replace when a style API exists.
-const NAV_LABEL = { Classic: 'Now Playing', 'Liquid Glass': 'Now Playing\u200B' };
 
 const clock = (ms) => {
   const total = Math.max(0, Math.floor((ms || 0) / 1000));
@@ -95,14 +89,6 @@ definePlugin({
       const layout = HOME[settings && settings.homeArrangement];
       await (layout ? ctx.layout.set({ target: 'home', ...layout }) : ctx.layout.clear('home'));
     };
-    // Registering an existing id replaces the entry, so this both creates and switches it.
-    const applyStyle = (settings) =>
-      ctx.navigation.register({
-        id: 'open-now-playing',
-        label: NAV_LABEL[settings && settings.style] || NAV_LABEL.Classic,
-        pageId: PAGE,
-      });
-    const applySettings = (settings) => Promise.all([applyStyle(settings), applyHome(settings)]);
 
     const stops = [
       ctx.pages.onMount(PAGE, () => {
@@ -121,7 +107,7 @@ definePlugin({
         lineIndex = event.lineIndex;
         refresh();
       }),
-      ctx.events.on('settings.changed', (settings) => void applySettings(settings).catch(report)),
+      ctx.events.on('settings.changed', (settings) => void applyHome(settings).catch(report)),
       ctx.events.on('ui.action', (event) => {
         if (!event || event.slot !== 'page' || event.pageId !== PAGE) return;
         const seek = /^seek-(\d+)$/.exec(event.id);
@@ -140,7 +126,8 @@ definePlugin({
     ];
 
     await ctx.pages.register({ id: PAGE, title: 'Now Playing' });
-    await applySettings(await ctx.settings.get().catch(() => ({}))).catch(report);
+    await ctx.navigation.register({ id: 'open-now-playing', label: 'Now Playing', pageId: PAGE });
+    await applyHome(await ctx.settings.get().catch(() => ({}))).catch(report);
 
     return () => stops.forEach((stop) => stop());
   },
