@@ -21,7 +21,7 @@ fs.writeFileSync("manifest.json", JSON.stringify({ ...head, homepage: u, reposit
 node tools/build.mjs
 node --test
 git add -A
-git diff --cached --quiet || git commit -q -m "Point manifest at $URL"
+git diff --cached --quiet || git -c user.name="${GIT_AUTHOR_NAME:-Cupertino for YAQMC}" -c user.email="${GIT_AUTHOR_EMAIL:-noreply@users.noreply.github.com}" commit -q -m "Point manifest at $URL"
 
 if ! gh repo view "$OWNER/$REPO_NAME" >/dev/null 2>&1; then
   gh repo create "$OWNER/$REPO_NAME" --public --source . --remote origin \

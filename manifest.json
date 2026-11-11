@@ -9,6 +9,8 @@
   "engines": {
     "yaqmc": ">=0.1.1"
   },
+  "homepage": "https://github.com/KwkQwQ-BwB/yaqmc-cupertino",
+  "repository": "https://github.com/KwkQwQ-BwB/yaqmc-cupertino",
   "entrypoints": {
     "styles": [
       "styles/00-tokens.css",
