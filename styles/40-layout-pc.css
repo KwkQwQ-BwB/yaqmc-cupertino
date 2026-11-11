@@ -1,0 +1,327 @@
+/* Layout system 1 — PC, after macOS.
+ * Full-height source list, unified toolbar, content running underneath a floating Now Playing bar,
+ * and Up Next docking as a third pane on wide windows.
+ * Scope: pointer hosts (Electron / browser) at regular width. Compact width falls to the phone system. */
+
+.app-shell:not([data-host-kind='android'], [data-host-kind='ios']) {
+  @media (min-width: 600px) {
+    --shell-sidebar-width: 228px;
+    --shell-player-height: 86px;
+    grid-template-columns: var(--shell-sidebar-width) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) var(--shell-player-height);
+
+    /* ── Source list ── */
+    & > .sidebar {
+      padding-inline: 10px;
+      padding-bottom: 10px;
+      border-right: 0.5px solid var(--cup-separator);
+      background: var(--sidebar);
+      -webkit-backdrop-filter: var(--cup-glass, none);
+      backdrop-filter: var(--cup-glass, none);
+    }
+
+    & .sidebar__brand {
+      height: 32px;
+      margin: 0 8px 12px;
+      gap: 8px;
+      font-family: inherit;
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+
+    & .sidebar__brand-mark {
+      flex-basis: 24px;
+      width: 24px;
+      height: 24px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+    }
+
+    & .sidebar__nav {
+      gap: 1px;
+    }
+
+    & .sidebar__item {
+      height: 30px;
+      padding: 0 8px;
+      gap: 8px;
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-size: var(--text-sm);
+      font-weight: 500;
+    }
+
+    & .sidebar__item svg {
+      color: var(--accent);
+    }
+
+    & .sidebar__item:hover {
+      background: var(--cup-fill-4);
+    }
+
+    & .sidebar__item[data-active] {
+      background: var(--cup-fill-2);
+    }
+
+    & .sidebar__item[data-active]::before {
+      content: none;
+    }
+
+    & .sidebar__section-label {
+      margin: 16px 8px 4px;
+      color: var(--text-tertiary);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    & .sidebar__profile {
+      min-height: 44px;
+      padding: 6px 8px;
+      border-radius: var(--radius-sm);
+    }
+
+    & .sidebar__profile:hover {
+      background: var(--cup-fill-4);
+    }
+
+    & .sidebar__avatar {
+      flex-basis: 28px;
+      width: 28px;
+      height: 28px;
+    }
+
+    & .sidebar__status {
+      background: var(--cup-green);
+    }
+
+    /* ── Toolbar ── */
+    & > .content-shell {
+      grid-row: 1 / 3;
+      grid-template-rows: 52px minmax(0, 1fr);
+      timeline-scope: --cup-page;
+    }
+
+    & .topbar {
+      padding: 0 20px;
+      border-bottom: 0;
+      background: var(--bg);
+      -webkit-backdrop-filter: var(--cup-glass, none);
+      backdrop-filter: var(--cup-glass, none);
+    }
+
+    & .topbar__history .icon-button {
+      color: var(--text);
+    }
+
+    & .search-trigger {
+      width: 220px;
+      height: 28px;
+      border: 0;
+      border-radius: var(--radius-sm);
+      background: var(--cup-fill-3);
+      color: var(--text-secondary);
+      font-size: var(--text-sm);
+    }
+
+    & .search-trigger:hover {
+      background: var(--cup-fill-1);
+    }
+
+    & .search-trigger kbd {
+      border: 0;
+      background: transparent;
+      font-size: 0.6875rem;
+    }
+
+    & .topbar__window-controls {
+      border-left: 0.5px solid var(--cup-separator);
+    }
+
+    /* ── Content ── */
+    & .main-content {
+      padding-bottom: var(--shell-player-height);
+      scroll-padding-bottom: var(--shell-player-height);
+      scroll-timeline: --cup-page block;
+    }
+
+    & .page {
+      max-width: 1240px;
+      padding: 16px 32px 40px;
+    }
+
+    /* ── Floating Now Playing bar ── */
+    & > .player-bar {
+      align-self: end;
+      justify-self: center;
+      width: min(calc(100% - 40px), 1120px);
+      height: 64px;
+      margin-bottom: 12px;
+      padding: 0 16px 0 10px;
+      border: 0;
+      border-radius: var(--cup-radius-bar);
+      background: var(--cup-chrome);
+      box-shadow: var(--cup-shadow-bar);
+      -webkit-backdrop-filter: var(--cup-glass, none);
+      backdrop-filter: var(--cup-glass, none);
+    }
+
+    & .player-bar__artwork-button,
+    & .player-bar__artwork {
+      flex-basis: 44px;
+      width: 44px;
+      height: 44px;
+      border-radius: 7px;
+    }
+
+    & .player-bar__title-link,
+    & .player-bar__track-copy strong {
+      font-weight: 600;
+    }
+
+    & .player-bar__track-copy span {
+      color: var(--text-secondary);
+    }
+
+    & .player-bar__center {
+      gap: 0;
+    }
+
+    & .player-controls {
+      gap: 6px;
+    }
+
+    & .player-controls .icon-button {
+      color: var(--text);
+    }
+
+    & .player-controls__play {
+      width: 34px;
+      height: 34px;
+      margin: 0 4px;
+      background: transparent;
+      color: var(--text);
+    }
+
+    & .player-controls__play svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    & .player-controls__play:not(:disabled):hover {
+      background: var(--cup-fill-3);
+    }
+
+    & .player-progress {
+      color: var(--text-tertiary);
+      font-size: 0.6875rem;
+    }
+
+    & .player-bar__tools .player-quality-select {
+      height: 28px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ── Up Next: popover by default, docked third pane when there is room ── */
+    & > .context-panel {
+      top: 60px;
+      right: 14px;
+      bottom: calc(var(--shell-player-height) + 6px);
+      -webkit-backdrop-filter: var(--cup-glass, none);
+      backdrop-filter: var(--cup-glass, none);
+    }
+  }
+
+  /* Rail states the host switches to on narrow or short windows. */
+  @media (min-width: 600px) and (max-width: 1119px) {
+    --shell-sidebar-width: 204px;
+  }
+
+  @media (orientation: portrait) and (min-width: 600px) and (max-width: 959px),
+    (orientation: landscape) and (min-width: 600px) and (max-width: 839px) and (min-height: 600px) {
+    --shell-sidebar-width: 68px;
+
+    & .sidebar__item,
+    & .sidebar__profile {
+      height: 40px;
+      padding: 0;
+    }
+
+    & > .player-bar .player-progress {
+      right: var(--cup-radius-bar);
+      left: var(--cup-radius-bar);
+    }
+  }
+
+  @media (orientation: landscape) and (min-width: 600px) and (max-height: 599px) {
+    --shell-sidebar-width: 60px;
+    --shell-player-height: 74px;
+
+    & > .player-bar {
+      height: 56px;
+      margin-bottom: 8px;
+    }
+
+    & .sidebar__item,
+    & .sidebar__profile {
+      height: 40px;
+      padding: 0;
+    }
+
+    & > .player-bar .player-progress {
+      right: var(--cup-radius-bar);
+      left: var(--cup-radius-bar);
+    }
+  }
+
+  @media (min-width: 1240px) and (min-height: 600px) {
+    &:has(> .context-panel) {
+      grid-template-columns: var(--shell-sidebar-width) minmax(0, 1fr) 340px;
+    }
+
+    & > .context-panel {
+      position: relative;
+      inset: auto;
+      grid-column: 3;
+      grid-row: 1 / 3;
+      width: auto;
+      z-index: 5;
+      padding-bottom: var(--shell-player-height);
+      border-left: 0.5px solid var(--cup-separator);
+      border-radius: 0;
+      background: var(--sidebar);
+      box-shadow: none;
+    }
+
+    /* The Now Playing bar keeps its full width and floats across content and pane alike. */
+    &:has(> .context-panel) > .player-bar {
+      grid-column: 2 / 4;
+    }
+
+    /* Docked: the page stays interactive beside the pane, so the dismiss scrim goes away.
+     * The pane's own close button and the queue button in the bar still close it. */
+    & > .panel-scrim {
+      display: none;
+    }
+  }
+}
+
+/* The traffic lights own the top-left corner on macOS; everywhere else the list starts tight. */
+:root:not([data-platform='macos']) .app-shell:not([data-host-kind='android'], [data-host-kind='ios']) > .sidebar {
+  @media (min-width: 600px) {
+    padding-top: 10px;
+  }
+}
+
+/* Toolbar hairline appears once the page scrolls under it (see cup-toolbar-edge). */
+@supports (animation-timeline: scroll()) {
+  .app-shell:not([data-host-kind='android'], [data-host-kind='ios']) .topbar {
+    @media (min-width: 600px) {
+      animation: cup-toolbar-edge linear both;
+      animation-timeline: --cup-page;
+      animation-range: 0 40px;
+    }
+  }
+}

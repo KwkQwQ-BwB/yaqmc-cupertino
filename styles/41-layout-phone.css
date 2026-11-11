@@ -1,0 +1,404 @@
+/* Layout system 2 — phones, after iOS, adapted to Android.
+ * One column with large titles; a floating tab bar with the mini player stacked above it; queues,
+ * menus and pickers become bottom sheets. Android keeps what Android users expect: the system back
+ * gesture drives history (no back chevron), targets stay ≥44px, and the bars sit above the gesture
+ * inset instead of assuming a home indicator.
+ * Scope: compact width on any host, so a narrow desktop window gets the same system. */
+
+@media (max-width: 599px) {
+  .app-shell {
+    --cup-row-inset: 52px;
+    --cup-bar-gap: 8px;
+    --cup-bar-inset: max(10px, var(--safe-left));
+    --shell-player-height: 64px;
+    --shell-nav-height: calc(58px + max(10px, var(--safe-bottom)));
+    grid-template-rows: minmax(0, 1fr) var(--shell-player-height) var(--shell-nav-height);
+  }
+
+  /* Content runs full height underneath the two floating bars. */
+  .app-shell > .content-shell {
+    grid-row: 1 / 4;
+    grid-template-rows: calc(52px + var(--safe-top)) minmax(0, 1fr);
+    timeline-scope: --cup-page;
+  }
+
+  .app-shell .main-content {
+    padding-bottom: calc(var(--shell-player-height) + var(--shell-nav-height) + 8px);
+    scroll-padding-bottom: calc(var(--shell-player-height) + var(--shell-nav-height));
+    scroll-timeline: --cup-page block;
+  }
+
+  /* ── Navigation bar: search field + account ── */
+  .app-shell .topbar {
+    padding-inline: max(16px, var(--safe-left)) max(10px, var(--safe-right));
+    border-bottom: 0;
+    background: var(--bg);
+  }
+
+  .app-shell .topbar__tools {
+    gap: 6px;
+  }
+
+  .app-shell .search-trigger {
+    height: 38px;
+    min-height: 38px;
+    padding-inline: 10px;
+    border: 0;
+    border-radius: 11px;
+    background: var(--cup-fill-3);
+    color: var(--text-secondary);
+    font-size: var(--text-md);
+  }
+
+  .app-shell .topbar__account {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+    padding: 4px;
+  }
+
+  .app-shell .topbar__account-avatar {
+    width: 32px;
+    height: 32px;
+    border: 0;
+  }
+
+  /* ── Large titles ── */
+  .app-shell .page {
+    padding-top: 6px;
+  }
+
+  .app-shell .page-heading {
+    margin-bottom: 18px;
+  }
+
+  .app-shell .page-heading h1,
+  .app-shell .search-results__heading h1,
+  .app-shell .search-page__intro h1 {
+    margin-top: 2px;
+    font-size: 2.125rem;
+    letter-spacing: -0.024em;
+    line-height: 1.12;
+  }
+
+  .app-shell .section-heading h2,
+  .app-shell .search-results__category-heading {
+    font-size: var(--text-lg);
+  }
+
+  .app-shell .home-page .content-section:first-child {
+    margin-top: 4px;
+  }
+
+  /* ── Shelves: horizontal, snapping, bleeding to the screen edge ── */
+  .app-shell :is(.home-page, .explore-page) :is(.media-grid--five, .media-grid--four) {
+    grid-auto-columns: 42%;
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    gap: 12px;
+    margin-inline: -16px;
+    padding: 2px 16px 6px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-padding-inline: 16px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .app-shell :is(.home-page, .explore-page) :is(.media-grid--five, .media-grid--four) > * {
+    scroll-snap-align: start;
+  }
+
+  .app-shell .home-page .media-grid--hero > .media-card .artwork {
+    border-radius: var(--radius-lg);
+  }
+
+  /* ── Lists ── */
+  .app-shell .track-list__header {
+    display: none;
+  }
+
+  .app-shell .track-row {
+    min-height: 56px;
+    border-radius: 0;
+  }
+
+  .app-shell .track-row:active {
+    background: var(--cup-fill-3);
+  }
+
+  .app-shell .track-row__title {
+    font-size: var(--text-md);
+    font-weight: 400;
+  }
+
+  .app-shell .track-row__artist {
+    font-size: var(--text-sm);
+  }
+
+  /* ── Detail header: centred artwork, full-width paired actions ── */
+  .app-shell .detail-hero {
+    padding: 8px 0 4px;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .app-shell .detail-hero__art {
+    width: clamp(180px, min(62vw, 30dvh), 260px);
+    border-radius: var(--radius-lg);
+  }
+
+  .app-shell .detail-hero h1 {
+    font-size: 1.375rem;
+    letter-spacing: -0.02em;
+  }
+
+  .app-shell .detail-hero__artist {
+    font-size: 1.25rem;
+  }
+
+  .app-shell .detail-hero__description {
+    margin-inline: auto;
+  }
+
+  .app-shell .detail-hero__owner,
+  .app-shell .song-page__artists {
+    justify-content: center;
+  }
+
+  .app-shell .detail-hero__actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .app-shell .detail-hero__actions .button {
+    min-width: 0;
+    height: 48px;
+    border-radius: var(--radius-md);
+    font-size: var(--text-md);
+  }
+
+  .app-shell .detail-hero__icon-action {
+    border-radius: var(--radius-md);
+  }
+
+  /* ── Search ── */
+  .app-shell .search-page__field {
+    height: 40px;
+    border-radius: 11px;
+  }
+
+  .app-shell .search-page__field input {
+    font-size: var(--text-md);
+  }
+
+  .app-shell .search-tabs {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .app-shell .search-tabs button {
+    flex: 1 0 auto;
+    min-height: 32px;
+  }
+
+  /* ── Grouped pages (Settings, Statistics, Plugins): gray canvas, white cells ── */
+  .app-shell:has(.settings-page, .statistics-page, .plugins-page, .plugin-page) :is(.main-content, .topbar) {
+    --cup-cell: var(--cup-grouped-cell);
+    background: var(--cup-grouped);
+  }
+
+  .app-shell .settings-section__heading {
+    padding-inline: 16px;
+  }
+
+  .app-shell .settings-section__heading h2 {
+    font-size: var(--text-lg);
+  }
+
+  .app-shell .settings-row {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .app-shell .settings-row strong {
+    font-size: var(--text-md);
+    font-weight: 400;
+  }
+
+  .app-shell .statistics-page {
+    padding-bottom: 32px;
+  }
+
+  /* ── Mini player ── */
+  .app-shell > .player-bar {
+    align-self: end;
+    min-height: 0;
+    height: 56px;
+    margin: 0 var(--cup-bar-inset) var(--cup-bar-gap);
+    padding: 0 6px 0 8px;
+    border: 0;
+    border-radius: 16px;
+    background: var(--cup-chrome);
+    box-shadow: var(--cup-shadow-bar);
+    -webkit-backdrop-filter: var(--cup-glass, none);
+    backdrop-filter: var(--cup-glass, none);
+  }
+
+  .app-shell .player-bar__artwork,
+  .app-shell .player-bar__artwork-button {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+    border-radius: 8px;
+  }
+
+  .app-shell .player-bar__track {
+    gap: 10px;
+  }
+
+  .app-shell .player-bar__title-link,
+  .app-shell .player-bar__track-copy strong {
+    font-size: var(--text-sm);
+    font-weight: 500;
+  }
+
+  .app-shell .player-controls .icon-button {
+    color: var(--text);
+  }
+
+  .app-shell .player-controls__play {
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    color: var(--text);
+  }
+
+  .app-shell .player-controls__play svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Seek rail hugs the bottom edge of the capsule instead of the top of a full-width bar. */
+  .app-shell > .player-bar .player-progress {
+    top: auto;
+    right: 16px;
+    bottom: -5px;
+    left: 16px;
+  }
+
+  .app-shell > .player-bar .player-progress input[type='range']::-webkit-slider-runnable-track {
+    height: 2px;
+    border-radius: 1px;
+    background: linear-gradient(
+      to right,
+      var(--text) 0 var(--range-progress),
+      var(--cup-fill-1) var(--range-progress) 100%
+    );
+  }
+
+  .app-shell > .player-bar .player-progress input[type='range']::-webkit-slider-thumb {
+    background: var(--text);
+  }
+
+  /* ── Tab bar ── */
+  .app-shell > .android-bottom-nav {
+    align-self: start;
+    min-height: 0;
+    height: 58px;
+    margin-inline: var(--cup-bar-inset);
+    padding: 4px;
+    gap: 2px;
+    border: 0;
+    border-radius: 29px;
+    background: var(--cup-chrome);
+    box-shadow: var(--cup-shadow-bar);
+    -webkit-backdrop-filter: var(--cup-glass, none);
+    backdrop-filter: var(--cup-glass, none);
+  }
+
+  .android-bottom-nav__item {
+    min-height: 0;
+    gap: 1px;
+    border-radius: 25px;
+    color: var(--text-secondary);
+    font-size: 0.625rem;
+    font-weight: 600;
+  }
+
+  .android-bottom-nav__item svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .android-bottom-nav__item[data-active] {
+    background: var(--cup-fill-3);
+    color: var(--accent);
+  }
+
+  /* ── Sheets ── */
+  .app-shell > .panel-scrim {
+    inset: 0;
+    background: rgb(0 0 0 / 0.32);
+  }
+
+  .app-shell > .context-panel {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-height: calc(100dvh - var(--safe-top) - 44px);
+    padding-bottom: var(--safe-bottom);
+    border: 0;
+    border-radius: 18px 18px 0 0;
+    background: var(--surface-raised);
+  }
+
+  .app-shell .context-panel__header {
+    position: relative;
+    min-height: 60px;
+    padding-top: 18px;
+  }
+
+  /* Grabber. */
+  .app-shell .context-panel__header::before {
+    position: absolute;
+    top: 6px;
+    left: calc(50% - 18px);
+    width: 36px;
+    height: 5px;
+    border-radius: 3px;
+    background: var(--cup-fill-1);
+    content: '';
+  }
+
+  .app-shell .queue-row {
+    min-height: 56px;
+  }
+
+  .app-shell .queue-row__main strong {
+    font-size: var(--text-md);
+    font-weight: 400;
+  }
+
+  .song-comments {
+    border-left: 0;
+  }
+
+  .plugin-notice-host {
+    bottom: calc(var(--shell-player-height) + var(--shell-nav-height) + 8px);
+  }
+}
+
+/* Large title → inline hairline: the bar gains its edge once content scrolls beneath it. */
+@supports (animation-timeline: scroll()) {
+  @media (max-width: 599px) {
+    .app-shell .topbar {
+      animation: cup-toolbar-edge linear both;
+      animation-timeline: --cup-page;
+      animation-range: 0 40px;
+    }
+  }
+}

@@ -1,0 +1,597 @@
+/* Shared components. Layout-agnostic: every layout system builds on these. */
+
+/* ── Type ─────────────────────────────────────────────────────────────── */
+:root {
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.005em;
+}
+
+.eyebrow {
+  color: var(--text-secondary);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.page-heading h1,
+.search-results__heading h1,
+.search-page__intro h1 {
+  font-size: clamp(1.75rem, 2.6vw, 2.125rem);
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  line-height: 1.15;
+}
+
+.page-heading {
+  margin-bottom: 24px;
+}
+
+.page-heading > p:last-child,
+.search-page__intro > p:last-child {
+  margin-top: 6px;
+  font-size: var(--text-sm);
+}
+
+.section-heading {
+  min-height: 32px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.section-heading h2,
+.search-results__category-heading,
+.settings-section__heading h2 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.section-heading > button {
+  color: var(--accent);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.section-heading > button:hover {
+  color: var(--accent-hover);
+}
+
+/* ── Focus, selection, scrollbars ─────────────────────────────────────── */
+::selection {
+  background: var(--selection);
+}
+
+:focus-visible {
+  outline-color: color-mix(in srgb, var(--focus) 70%, transparent);
+}
+
+@media (hover: hover) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--text-tertiary) 55%, transparent) transparent;
+  }
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────── */
+.button {
+  min-width: 76px;
+  height: 32px;
+  padding: 0 14px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.button--primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: inset 0 0.5px 0 rgb(255 255 255 / 0.25);
+}
+
+/* iOS "gray" button: tinted label on a neutral fill, no outline. */
+.button--quiet,
+.button--secondary {
+  border-color: transparent;
+  background: var(--cup-fill-3);
+  color: var(--accent);
+}
+
+.button--quiet:hover,
+.button--secondary:hover {
+  background: var(--cup-fill-1);
+}
+
+.button:disabled {
+  opacity: 0.4;
+}
+
+@media (pointer: coarse) {
+  .button {
+    min-height: 44px;
+    padding: 0 18px;
+    border-radius: var(--radius-round);
+  }
+}
+
+.icon-button {
+  border-radius: var(--radius-sm);
+}
+
+.icon-button:not(:disabled):hover {
+  background: var(--cup-fill-4);
+}
+
+.icon-button:disabled {
+  opacity: 0.35;
+}
+
+/* ── Sliders: thin track, white knob ──────────────────────────────────── */
+input[type='range']::-webkit-slider-runnable-track {
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--cup-range-fill, var(--text-secondary)) 0 var(--range-progress),
+    var(--cup-fill-1) var(--range-progress) 100%
+  );
+}
+
+input[type='range']::-webkit-slider-thumb {
+  width: 14px;
+  height: 14px;
+  margin-top: -5px;
+  border: 0;
+  background: var(--cup-knob);
+  box-shadow:
+    0 0 0 0.5px rgb(0 0 0 / 0.12),
+    0 1px 4px rgb(0 0 0 / 0.3);
+}
+
+.settings-range input[type='range'] {
+  --cup-range-fill: var(--accent);
+}
+
+@media (pointer: coarse) {
+  input[type='range']::-webkit-slider-thumb {
+    width: 22px;
+    height: 22px;
+    margin-top: -9px;
+  }
+}
+
+/* ── Switch ───────────────────────────────────────────────────────────── */
+.toggle-switch {
+  width: 42px;
+  height: 26px;
+  flex-basis: 42px;
+  background: var(--cup-fill-1);
+}
+
+.toggle-switch span {
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  background: var(--cup-knob);
+  box-shadow:
+    0 0 0 0.5px rgb(0 0 0 / 0.08),
+    0 2px 5px rgb(0 0 0 / 0.22);
+}
+
+.toggle-switch[data-active] {
+  background: var(--cup-green);
+}
+
+.toggle-switch[data-active] span {
+  background: var(--cup-knob);
+  transform: translate(16px, -50%);
+}
+
+/* ── Pop-up button and menus ──────────────────────────────────────────── */
+.ui-select__trigger {
+  height: 30px;
+  border-color: transparent;
+  border-radius: var(--radius-sm);
+  background: var(--cup-fill-3);
+}
+
+.ui-select__trigger:not(:disabled):hover,
+.ui-select__trigger[aria-expanded='true'] {
+  border-color: transparent;
+  background: var(--cup-fill-1);
+  box-shadow: none;
+}
+
+.ui-select__trigger > svg:last-child {
+  color: var(--accent);
+}
+
+.ui-select__menu,
+.action-menu__surface,
+.context-menu__surface,
+.add-to-playlist-picker,
+.playback-mode__surface {
+  padding: 5px;
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--surface-raised) 96%, transparent);
+  box-shadow: var(--shadow-md);
+  -webkit-backdrop-filter: var(--cup-glass, none);
+  backdrop-filter: var(--cup-glass, none);
+}
+
+.action-menu__surface button,
+.context-menu__surface button,
+.add-to-playlist-picker button,
+.playback-mode__option,
+.ui-select__option {
+  min-height: 30px;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: var(--text-sm);
+}
+
+/* macOS menus highlight the hovered row in the accent colour. */
+@media (hover: hover) {
+  .action-menu__surface button:not(:disabled):hover,
+  .action-menu__surface button:not(:disabled):focus-visible,
+  .context-menu__surface button:not(:disabled):hover,
+  .context-menu__surface button:not(:disabled):focus-visible,
+  .add-to-playlist-picker button:not(:disabled):hover,
+  .add-to-playlist-picker button:not(:disabled):focus-visible,
+  .playback-mode__option:not(:disabled):hover,
+  .playback-mode__option:not(:disabled):focus-visible,
+  .ui-select__option[data-active] {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .playback-mode__option:not(:disabled):hover :is(small, .playback-mode__check),
+  .playback-mode__option:not(:disabled):focus-visible :is(small, .playback-mode__check),
+  .ui-select__option[data-active] :is(small, strong) {
+    color: inherit;
+  }
+
+  .ui-select__option[data-active] .ui-select__check {
+    color: var(--accent-ink);
+  }
+}
+
+/* Touch menus: iOS context-menu rows, 44pt tall with hairlines. */
+@media (pointer: coarse) {
+  .action-menu__surface,
+  .context-menu__surface,
+  .add-to-playlist-picker,
+  .playback-mode__surface,
+  .ui-select__menu {
+    padding: 0;
+    border-radius: var(--radius-lg);
+  }
+
+  .action-menu__surface button,
+  .context-menu__surface button,
+  .add-to-playlist-picker button,
+  .playback-mode__option,
+  .ui-select__option {
+    min-height: 46px;
+    padding-inline: 16px;
+    border-radius: 0;
+    box-shadow: inset 0 -0.5px 0 var(--cup-separator);
+    font-size: var(--text-md);
+  }
+
+  .action-menu__surface button:active,
+  .context-menu__surface button:active,
+  .add-to-playlist-picker button:active,
+  .playback-mode__option:active,
+  .ui-select__option:active {
+    background: var(--cup-fill-2);
+  }
+
+  .ui-select__trigger {
+    height: 36px;
+  }
+}
+
+/* ── Artwork and cards ────────────────────────────────────────────────── */
+.artwork {
+  border-radius: var(--radius-sm);
+}
+
+.artwork::after {
+  border: 0;
+  box-shadow: inset 0 0 0 0.5px rgb(0 0 0 / 0.12);
+}
+
+.media-card__open .artwork,
+.catalog-preview-card__link .artwork,
+.account-playlist-card .artwork,
+.artist-page__album-card .artwork {
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.1);
+}
+
+.media-card__art {
+  margin-bottom: 8px;
+}
+
+.media-card__title,
+.media-card__title.entity-link,
+.catalog-preview-card__link strong,
+.account-playlist-card__copy strong {
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.media-card__subtitle,
+.catalog-preview-card__artist,
+.catalog-preview-card__year,
+.account-playlist-card small {
+  margin-top: 1px;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.media-card__meta:hover .media-card__title {
+  text-decoration: none;
+}
+
+/* Play affordance: dark glass disc, the way artwork overlays read on Apple Music. */
+.media-card__play,
+.media-card--hero .media-card__play,
+.editorial-card__play {
+  background: rgb(40 40 42 / 0.72);
+  box-shadow: none;
+  color: #ffffff;
+}
+
+.media-card__play:hover,
+.editorial-card__play:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ── Track table ──────────────────────────────────────────────────────── */
+.track-list__header {
+  height: 28px;
+  border-bottom: 0.5px solid var(--cup-separator);
+  color: var(--text-tertiary);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.track-row {
+  position: relative;
+  min-height: 46px;
+  padding-block: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.track-list--compact .track-row {
+  min-height: 44px;
+}
+
+/* Inset hairline between rows; hidden around the hovered and playing rows like a Finder list. */
+.track-row + .track-row::before {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  left: var(--cup-row-inset, 56px);
+  height: 0.5px;
+  background: var(--cup-separator);
+  content: '';
+}
+
+.track-row:hover::before,
+.track-row:hover + .track-row::before,
+.track-row[data-active]::before,
+.track-row[data-active] + .track-row::before {
+  background: transparent;
+}
+
+.track-row:hover {
+  background: var(--cup-fill-4);
+}
+
+.track-row[data-active] {
+  background: var(--cup-fill-3);
+}
+
+.track-row__title {
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.track-row__artist,
+.track-row__album,
+.track-list__duration {
+  color: var(--text-secondary);
+}
+
+.track-row__actions {
+  opacity: 0;
+}
+
+@media (hover: none) {
+  .track-row__actions {
+    opacity: 1;
+  }
+}
+
+/* ── Panels, sheets, dialogs ──────────────────────────────────────────── */
+.context-panel {
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-md);
+}
+
+.context-panel__header {
+  min-height: 52px;
+  border-bottom: 0.5px solid var(--cup-separator);
+}
+
+.context-panel__header p {
+  font-family: inherit;
+  font-size: var(--text-md);
+  font-weight: 700;
+}
+
+.context-panel__label {
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.queue-now {
+  border-bottom: 0.5px solid var(--cup-separator);
+}
+
+.queue-now__track .artwork {
+  border-radius: 6px;
+}
+
+.queue-row {
+  border-radius: var(--radius-sm);
+}
+
+.queue-row:hover {
+  background: var(--cup-fill-4);
+}
+
+.queue-row__main strong {
+  font-weight: 500;
+}
+
+.panel-scrim {
+  background: rgb(0 0 0 / 0.2);
+}
+
+.account-dialog,
+.plugin-dialog,
+.issue-reporter-dialog,
+.lyrics-preset-editor {
+  border: 0;
+  border-radius: var(--radius-xl);
+  background: var(--surface-raised);
+  color: var(--text);
+  box-shadow: var(--shadow-md);
+}
+
+.account-dialog-backdrop,
+.plugin-dialog-backdrop {
+  background: rgb(0 0 0 / 0.36);
+}
+
+.issue-reporter-dialog::backdrop,
+.lyrics-preset-editor::backdrop,
+.song-comments-modal::backdrop {
+  background: rgb(0 0 0 / 0.36);
+}
+
+.account-dialog__header {
+  border-bottom: 0.5px solid var(--cup-separator);
+}
+
+.account-dialog__header p {
+  letter-spacing: 0.02em;
+}
+
+.issue-reporter-dialog__field :is(input, select, textarea),
+.account-playlist-mutation-form input,
+.settings-provider-profiles__create input,
+.settings-text-input,
+.lyrics-preset-editor__select :is(select, input) {
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--cup-fill-3);
+  color: var(--text);
+}
+
+.issue-reporter-dialog__field :is(input, select, textarea):focus,
+.account-playlist-mutation-form input:focus,
+.settings-provider-profiles__create input:focus,
+.settings-text-input:focus {
+  outline: 3px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+/* ── Loading, empty and error states ──────────────────────────────────── */
+.skeleton {
+  border-radius: var(--radius-md);
+  background: linear-gradient(90deg, var(--cup-fill-4) 25%, var(--cup-fill-2) 50%, var(--cup-fill-4) 75%);
+  background-size: 200% 100%;
+}
+
+.skeleton-heading {
+  background: var(--cup-fill-3);
+}
+
+.empty-state {
+  min-height: 360px;
+  color: var(--text-secondary);
+}
+
+.empty-state > span {
+  width: 64px;
+  height: 64px;
+  border: 0;
+  background: var(--cup-fill-3);
+  color: var(--text-secondary);
+}
+
+.empty-state h1 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.empty-state--error h1 {
+  color: var(--text);
+}
+
+.empty-state--error > span {
+  background: color-mix(in srgb, var(--danger) 14%, transparent);
+  color: var(--danger);
+}
+
+.discover-status,
+.search-page__placeholder,
+.queue-empty {
+  color: var(--text-secondary);
+}
+
+.core-status-banner {
+  border: 0;
+  border-radius: var(--radius-round);
+  background: var(--cup-chrome);
+  box-shadow: var(--cup-shadow-bar);
+}
+
+/* Notification banner; the host's level-coloured border stays as the status cue. */
+.plugin-notice {
+  padding: 12px 14px;
+  border-radius: var(--radius-lg);
+  background: var(--cup-chrome);
+  box-shadow: var(--cup-shadow-bar);
+}
+
+.now-playing-bars i {
+  border-radius: 1px;
+}
+
+/* ── Scroll edge ──────────────────────────────────────────────────────── */
+/* Each layout runs this on its top bar against the page's scroll timeline: the hairline appears once
+ * content scrolls underneath. It animates box-shadow because promoted (!important) declarations
+ * outrank animations, so a keyframe can only move a property no sheet declares on that element. */
+@keyframes cup-toolbar-edge {
+  to {
+    box-shadow: 0 0.5px 0 var(--cup-separator);
+  }
+}

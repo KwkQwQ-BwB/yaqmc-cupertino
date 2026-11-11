@@ -1,0 +1,13 @@
+{
+  "name": "yaqmc-cupertino",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Apple-inspired redesign plugin for YAQMC (macOS / iOS / iPadOS layout systems).",
+  "engines": { "node": ">=22.2.0" },
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "test": "node --test"
+  }
+}

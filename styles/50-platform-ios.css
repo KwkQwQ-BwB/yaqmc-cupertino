@@ -1,0 +1,32 @@
+/* Entry point for a future iOS / iPadOS host.
+ *
+ * YAQMC has no iOS host today (HostKind is electron | android | fake), so nothing below matches yet.
+ * The layout systems are already written against size classes rather than Android itself:
+ *   compact width  → 41-layout-phone.css (any host)
+ *   regular, touch → 42-layout-pad.css   (android, ios)
+ *   regular, mouse → 40-layout-pc.css    (everything else)
+ * When a host reports `data-host-kind="ios"` / `data-platform="ios"`, iPhone and iPad pick up those
+ * systems unchanged, 00-tokens.css gives them the touch type ramp and real glass, and this file is
+ * where the few places iOS must differ from Android belong. */
+
+.app-shell[data-host-kind='ios'] {
+  /* iOS has no system back gesture owned by the host: bring the back chevron back on phones. */
+  @media (max-width: 599px) {
+    & .topbar__history {
+      display: flex;
+    }
+
+    & .topbar__history > :last-child {
+      display: none;
+    }
+
+    & .topbar__history .icon-button {
+      color: var(--accent);
+    }
+  }
+
+  /* Rubber-band scrolling is native there; Android's overscroll containment is not wanted. */
+  & .main-content {
+    overscroll-behavior-y: auto;
+  }
+}

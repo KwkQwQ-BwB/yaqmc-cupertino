@@ -1,0 +1,47 @@
+{
+  "manifestVersion": 1,
+  "apiVersion": 4,
+  "id": "dev.cupertino.yaqmc",
+  "name": "Cupertino",
+  "description": "An Apple-inspired redesign: macOS on desktop, iOS on phones, iPadOS on tablets.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "engines": { "yaqmc": ">=0.1.1" },
+  "entrypoints": {
+    "styles": [
+      "styles/00-tokens.css",
+      "styles/10-foundation.css",
+      "styles/20-pages.css",
+      "styles/30-now-playing.css",
+      "styles/40-layout-pc.css",
+      "styles/41-layout-phone.css",
+      "styles/42-layout-pad.css",
+      "styles/50-platform-ios.css"
+    ],
+    "scenes": ["scenes/cupertino.scene.json"],
+    "script": "main.js"
+  },
+  "permissions": [
+    "style.register",
+    "scene.register",
+    "track.read",
+    "lyrics.read",
+    "player.read",
+    "player.control",
+    "ui.pages",
+    "ui.navigation",
+    "ui.layout"
+  ],
+  "settingsSchema": {
+    "fields": [
+      {
+        "id": "homeArrangement",
+        "type": "select",
+        "label": "Home arrangement",
+        "description": "Order of the Home sections. Applies immediately.",
+        "options": ["Default", "Stations first", "Essentials only"],
+        "default": "Default"
+      }
+    ]
+  }
+}

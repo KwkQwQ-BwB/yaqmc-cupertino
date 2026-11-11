@@ -1,0 +1,113 @@
+/* Now Playing surfaces: the lyrics stage transport, its chrome, and song comments.
+ * The stage itself (AMLL lyrics, scene geometry, presets) is left to the host and to the bundled
+ * "Cupertino" scene; only the controls are redrawn here. */
+
+/* Transport: bare glyphs instead of a filled disc, as on the Apple Music Now Playing screen. */
+.lyrics-stage__play,
+.lyrics-transport__play {
+  background: transparent;
+  color: var(--lyrics-ink, var(--transport-text, var(--text)));
+}
+
+.lyrics-stage__play svg,
+.lyrics-transport__play svg {
+  width: 30px;
+  height: 30px;
+}
+
+.lyrics-stage__play:not(:disabled):hover,
+.lyrics-transport__play:not(:disabled):hover {
+  background: color-mix(in srgb, var(--lyrics-ink, currentColor) 14%, transparent);
+}
+
+.lyrics-stage__control-buttons .icon-button svg {
+  width: 26px;
+  height: 26px;
+}
+
+.lyrics-stage__topbar .icon-button,
+.lyrics-stage__chrome .icon-button,
+.lyrics-stage__control-buttons .icon-button {
+  border-radius: 50%;
+}
+
+/* Scrubber: a single thick rounded bar; the knob is the bar's own end. */
+.lyrics-stage__progress input[type='range']::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--lyrics-ink) 78%, transparent) 0 var(--range-progress),
+    color-mix(in srgb, var(--lyrics-ink) 20%, transparent) var(--range-progress) 100%
+  );
+}
+
+.lyrics-stage__progress input[type='range']::-webkit-slider-thumb {
+  width: 6px;
+  height: 6px;
+  margin-top: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.lyrics-stage__progress input[type='range']:active::-webkit-slider-runnable-track,
+.lyrics-stage__progress input[type='range']:focus-visible::-webkit-slider-runnable-track {
+  height: 10px;
+  border-radius: 5px;
+}
+
+.lyrics-stage__progress input[type='range']:active::-webkit-slider-thumb,
+.lyrics-stage__progress input[type='range']:focus-visible::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+}
+
+.lyrics-stage__progress {
+  font-weight: 600;
+}
+
+.lyrics-transport {
+  border: 0;
+  border-radius: 22px;
+}
+
+.lyrics-scene__metadata strong {
+  letter-spacing: -0.015em;
+}
+
+/* Comments: an inset inspector sheet on wide screens, a page sheet on phones. */
+.song-comments {
+  height: calc(100% - 20px);
+  margin: 10px;
+  overflow: hidden;
+  border-left: 0;
+  border-radius: var(--radius-xl);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-md);
+}
+
+.song-comments__header h2 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.song-comments__sort,
+.song-comment,
+.song-comments__footer {
+  border-color: var(--cup-separator);
+}
+
+.song-comment__author {
+  font-weight: 600;
+}
+
+@media (max-width: 599px) {
+  .song-comments {
+    align-self: flex-end;
+    width: 100%;
+    height: calc(100% - var(--safe-area-inset-top, env(safe-area-inset-top, 0px)) - 28px);
+    margin: 0;
+    border-radius: 18px 18px 0 0;
+  }
+}
