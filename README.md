@@ -97,7 +97,8 @@ removes every `style[data-yaqmc-plugin-style]` node of that plugin
 (`src/application/plugin-runtime.ts`, since `c870878`). Style-only plugins are unaffected, a plugin with
 styles *and* a script loses its CSS on every launch and enable. 1.1.0 avoids it by shipping the redesign
 without a script. A host fix (worker restarts keep resource-owned style nodes, with a regression test) is
-on the YAQMC branch `fix/plugin-restart-keeps-styles`; with it, 1.0.0 also renders (verified), but 1.1.0
+on the YAQMC branch `fix/plugin-restart-keeps-styles`
+([patch](docs/host-fix/0001-fix-plugins-keep-a-plugin-s-styles-when-its-script-w.patch)); with it, 1.0.0 also renders (verified), but 1.1.0
 does not need it.
 
 ### Permissions

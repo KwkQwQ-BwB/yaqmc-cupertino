@@ -1,0 +1,113 @@
+From 529b3b9dbed3a671aa3a000eb788b61f1787314b Mon Sep 17 00:00:00 2001
+From: Cupertino for YAQMC <noreply@users.noreply.github.com>
+Date: Wed, 11 Nov 2026 10:06:41 -0800
+Subject: [PATCH] fix(plugins): keep a plugin's styles when its script worker
+ starts
+
+applyPluginResourcesSnapshot inserts each plugin's style and scene nodes,
+then startScripts calls retireOnePlugin before starting a worker that is not
+running yet. retireOnePlugin also removed that plugin's style nodes, so any
+plugin shipping both styles and a script lost its CSS on every launch,
+enable and worker restart; style-only plugins were unaffected.
+
+Those nodes belong to the resource snapshot and are already reconciled by
+applyStyleSheets/applySceneSheets, so worker restarts from startScripts now
+leave them alone. Revocation paths still remove them synchronously.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+---
+ src/application/plugin-runtime.events.test.ts | 36 +++++++++++++++++++
+ src/application/plugin-runtime.ts             |  9 ++---
+ 2 files changed, 41 insertions(+), 4 deletions(-)
+
+diff --git a/src/application/plugin-runtime.events.test.ts b/src/application/plugin-runtime.events.test.ts
+index 9b64b01..d924a82 100644
+--- a/src/application/plugin-runtime.events.test.ts
++++ b/src/application/plugin-runtime.events.test.ts
+@@ -489,6 +489,42 @@ describe('PLUG-07 plugin event fan-out permissions', () => {
+     expect(logErrorMock).toHaveBeenCalledWith('plugin.resources.refresh_failed', expect.any(Error));
+   });
+ 
++  it('keeps the styles and scene CSS of a plugin whose script worker is (re)started', async () => {
++    const resources = {
++      ...emptyResources(),
++      styleOrder: [GRANTED],
++      styles: [{ pluginId: GRANTED, css: '.sidebar{width:228px}' }],
++      scenes: [
++        { pluginId: GRANTED, pluginName: GRANTED, sceneId: 's', css: 'p{}', definition: {} },
++      ],
++      scripts: [{ pluginId: GRANTED, pluginName: GRANTED, source: 'definePlugin({});' }],
++    };
++    let sha = 'a';
++    invokeMock.mockImplementation((method: string) => {
++      if (method === 'plugin_active_resources')
++        return Promise.resolve({
++          ...resources,
++          scripts: [{ ...resources.scripts[0], packageSha256: sha }],
++        });
++      if (method === 'plugin_list')
++        return Promise.resolve([{ id: GRANTED, grantedPermissions: [] }]);
++      if (method === 'plugin_runtime_start') return Promise.resolve('token');
++      return Promise.resolve(undefined);
++    });
++    const styled = () => ({
++      style: document.querySelectorAll(`style[data-yaqmc-plugin-style="${GRANTED}"]`).length,
++      scene: document.querySelectorAll(`style[data-yaqmc-plugin-scene-style="${GRANTED}"]`).length,
++    });
++
++    await applyPluginResources(); // first start: no worker yet
++    expect(FakeWorker.instances.length).toBeGreaterThan(0);
++    expect(styled()).toEqual({ style: 1, scene: 1 });
++
++    sha = 'b'; // changed fingerprint restarts the worker
++    await applyPluginResources();
++    expect(styled()).toEqual({ style: 1, scene: 1 });
++  });
++
+   it('coalesces refreshes and never applies an obsolete resource snapshot', async () => {
+     const firstResources = deferred<ReturnType<typeof emptyResources>>();
+     const latestResources = deferred<ReturnType<typeof emptyResources>>();
+diff --git a/src/application/plugin-runtime.ts b/src/application/plugin-runtime.ts
+index e517670..41cd0d1 100644
+--- a/src/application/plugin-runtime.ts
++++ b/src/application/plugin-runtime.ts
+@@ -712,7 +712,7 @@ function stopScripts(): void {
+   workerReadiness.clear();
+ }
+ 
+-async function retireOnePlugin(id: string): Promise<void> {
++async function retireOnePlugin(id: string, keepResourceStyles = false): Promise<void> {
+   pluginEpochs.set(id, (pluginEpochs.get(id) ?? 0) + 1);
+   workers.get(id)?.terminate();
+   workers.delete(id);
+@@ -723,7 +723,8 @@ async function retireOnePlugin(id: string): Promise<void> {
+   stagedEffects.delete(id);
+   clearPluginSceneBackgrounds(id);
+   clearPluginUi(id);
+-  if (typeof document !== 'undefined') {
++  // Style and scene nodes belong to the resource snapshot; a worker restart must not drop them.
++  if (!keepResourceStyles && typeof document !== 'undefined') {
+     for (const attr of [STYLE_ATTR, SCENE_STYLE_ATTR]) {
+       document.querySelectorAll(`style[${attr}]`).forEach((node) => {
+         if (node.getAttribute(attr) === id) node.remove();
+@@ -868,7 +869,7 @@ async function startScripts(
+   generation: number,
+ ): Promise<void> {
+   const desired = new Set(scripts.map((s) => s.pluginId));
+-  for (const id of workers.keys()) if (!desired.has(id)) await retireOnePlugin(id);
++  for (const id of workers.keys()) if (!desired.has(id)) await retireOnePlugin(id, true);
+   for (const script of scripts) {
+     if (generation !== runtimeGeneration) return;
+     const fingerprint = JSON.stringify([
+@@ -878,7 +879,7 @@ async function startScripts(
+     ]);
+     if (workerFingerprints.get(script.pluginId) === fingerprint && workers.has(script.pluginId))
+       continue;
+-    await retireOnePlugin(script.pluginId);
++    await retireOnePlugin(script.pluginId, true);
+     const epoch = pluginEpochs.get(script.pluginId);
+     try {
+       const token = await client.invoke('plugin_runtime_start', { pluginId: script.pluginId });
+-- 
+2.47.3
+
