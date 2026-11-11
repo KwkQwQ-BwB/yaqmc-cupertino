@@ -196,6 +196,17 @@ YAQMC has no iOS host yet. When one reports `data-host-kind="ios"` and `data-pla
   restores the back chevron on phones (no system back gesture) and native rubber-band scrolling.
 - Add `ios` to nothing else: `manifest.json` leaves `platforms` unset so the package is not excluded.
 
+## Publishing
+
+With an authenticated GitHub CLI:
+
+```bash
+tools/publish.sh
+```
+
+It creates the repository (topic `yaqmc-plugin`), pushes, and publishes Release `v<version>` with the
+package and `docs/release-notes.md`.
+
 ## Development
 
 Requires Node.js 22.2 or newer; no dependencies.
